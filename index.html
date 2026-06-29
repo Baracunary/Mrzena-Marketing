@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MRZENA Marketing – výkonnostní marketing, Meta Ads, Google Ads, landing pages a analytika pro firmy, které chtějí růst profitabilně.">
+<meta name="keywords" content="výkonnostní marketing, Meta Ads, Google Ads, landing pages, analytika, CRO, Praha">
+<title>MRZENA Marketing – Data. Strategie. Růst.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1E90FF;
+  --blue-mid:#2563EB;
+  --blue-dark:#0D1B2A;
+  --teal:#00B4DB;
+  --navy:#080E1A;
+  --surface:#0F1624;
+  --surface2:#141C2E;
+  --border:rgba(30,144,255,0.15);
+  --border2:rgba(255,255,255,0.06);
+  --text:#F0F4FF;
+  --text2:#8B9DC3;
+  --text3:#5A6A8A;
+  --white:#FFFFFF;
+  --orange:#FF7A00;
+  --radius:16px;
+  --radius-lg:24px;
+  --radius-xl:32px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--navy);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:'Space Grotesk',sans-serif;line-height:1.15;letter-spacing:-0.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;font-family:'Inter',sans-serif}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--blue-mid);border-radius:3px}
+
+/* LAYOUT */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:120px 0}
+.section-sm{padding:80px 0}
+
+/* GRADIENT TEXT */
+.grad{background:linear-gradient(135deg,var(--white) 0%,var(--blue) 60%,var(--teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-blue{background:linear-gradient(135deg,var(--blue) 0%,var(--teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 0 30px rgba(30,144,255,0.35)}
+.btn-primary:hover{background:#2a9fff;box-shadow:0 0 50px rgba(30,144,255,0.55);transform:translateY(-2px)}
+.btn-secondary{background:rgba(255,255,255,0.05);color:var(--text);border:1px solid var(--border2);backdrop-filter:blur(10px)}
+.btn-secondary:hover{background:rgba(255,255,255,0.1);border-color:var(--border);transform:translateY(-2px)}
+.btn-lg{padding:18px 36px;font-size:16px}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+
+/* BADGE */
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(30,144,255,0.1);border:1px solid rgba(30,144,255,0.25);border-radius:50px;font-size:13px;font-weight:500;color:var(--blue);letter-spacing:0.03em;margin-bottom:24px}
+.badge-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+
+/* GLASS CARD */
+.glass{background:rgba(15,22,36,0.6);border:1px solid var(--border2);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--radius-lg)}
+.glass:hover{border-color:var(--border);transition:border-color 0.3s}
+
+/* SECTION LABEL */
+.section-label{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+.section-title{font-size:clamp(32px,5vw,52px);font-weight:700;margin-bottom:20px}
+.section-sub{font-size:17px;color:var(--text2);max-width:580px;line-height:1.7}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:all 0.4s}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-scrolled{background:rgba(8,14,26,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:38px;height:38px;flex-shrink:0}
+.logo-text{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;line-height:1.1;letter-spacing:0.06em;text-transform:uppercase}
+.logo-text span{display:block;font-size:9px;font-weight:500;letter-spacing:0.2em;color:var(--text3);margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text2);transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--navy);z-index:99;padding:100px 24px 40px;flex-direction:column;gap:8px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:24px;font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--text2);padding:12px 0;border-bottom:1px solid var(--border2)}
+.mobile-menu a:hover{color:var(--white)}
+.mobile-menu .btn{margin-top:24px;justify-content:center}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:72px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero-glow-1{position:absolute;top:-20%;left:-10%;width:70%;height:70%;background:radial-gradient(circle,rgba(30,144,255,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-glow-2{position:absolute;bottom:-20%;right:-10%;width:60%;height:60%;background:radial-gradient(circle,rgba(0,180,219,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(30,144,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(30,144,255,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%)}
+.hero-content{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:28px}
+.hero-h1{font-size:clamp(34px,4.2vw,56px);font-weight:700;line-height:1.12;margin-bottom:24px}
+.hero-sub{font-size:18px;color:var(--text2);line-height:1.75;max-width:520px;margin-bottom:40px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero-mobile-kpis{display:none;margin-top:36px;background:rgba(15,22,36,0.7);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:24px 20px;backdrop-filter:blur(20px);text-align:center}
+.hero-mobile-kpis-row{display:flex;align-items:stretch;justify-content:center;gap:0}
+.hmk-item{flex:1;padding:4px 8px}
+.hmk-num{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;line-height:1;background:linear-gradient(135deg,#fff 0%,var(--blue) 70%,var(--teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hmk-label{font-size:12px;color:var(--text2);margin-top:6px;line-height:1.4}
+.hmk-divider{width:1px;background:var(--border2);align-self:stretch;margin:4px 0}
+.hero-trust{display:flex;align-items:center;gap:16px;margin-top:48px;padding-top:40px;border-top:1px solid var(--border2)}
+.hero-trust-avatars{display:flex}
+.hero-trust-avatars span{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--blue-mid),var(--teal));border:2px solid var(--navy);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+.hero-trust-avatars span:first-child{margin-left:0}
+.hero-trust-text{font-size:13px;color:var(--text2)}
+.hero-trust-text strong{color:var(--white)}
+.hero-visual{position:relative}
+.hero-card{background:rgba(15,22,36,0.8);border:1px solid var(--border2);border-radius:var(--radius-xl);padding:32px;backdrop-filter:blur(30px)}
+.hero-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.hero-card-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;color:var(--text2)}
+.hero-card-badge{background:rgba(30,144,255,0.15);color:var(--blue);padding:4px 10px;border-radius:50px;font-size:11px;font-weight:600}
+.results-wrap{background:rgba(15,22,36,0.75);border:1px solid var(--border2);border-radius:var(--radius-xl);padding:28px 28px 20px;backdrop-filter:blur(30px)}
+.results-header{margin-bottom:20px}
+.results-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--white);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px}
+.results-sub{font-size:11px;color:var(--text3);line-height:1.5}
+.results-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.rc{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:20px 18px;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden}
+.rc::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(30,144,255,0.1),transparent 70%);opacity:0;transition:opacity 0.35s}
+.rc:hover{border-color:var(--border);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
+.rc:hover::before{opacity:1}
+.rc-big{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.5vw,38px);font-weight:700;line-height:1;background:linear-gradient(135deg,var(--white) 0%,var(--blue) 70%,var(--teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.rc-sub{font-size:12px;font-weight:600;color:var(--blue);margin-bottom:8px;letter-spacing:0.01em}
+.rc-desc{font-size:11px;color:var(--text3);line-height:1.5}
+.results-cta{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;color:var(--text3);transition:color 0.2s;padding:8px 0;cursor:pointer;border-top:1px solid var(--border2)}
+.results-cta:hover{color:var(--blue)}
+.results-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.floating-pill{position:absolute;background:rgba(15,22,36,0.9);border:1px solid var(--border);border-radius:50px;padding:10px 16px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;backdrop-filter:blur(20px);white-space:nowrap}
+.floating-pill .icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+.pill-1{top:-20px;right:-20px;animation:float1 4s ease-in-out infinite}
+.pill-2{bottom:-20px;left:-20px;animation:float2 5s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* TRUST / STATS */
+#trust{padding:80px 0;border-top:1px solid var(--border2);border-bottom:1px solid var(--border2)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border2)}
+.trust-item{background:var(--navy);padding:48px 32px;text-align:center;position:relative;overflow:hidden}
+.trust-item::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(30,144,255,0.06),transparent 70%)}
+.trust-num{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,5vw,64px);font-weight:700;line-height:1;margin-bottom:8px}
+.trust-label{font-size:14px;color:var(--text2);font-weight:500}
+
+/* SERVICES */
+#services{background:linear-gradient(180deg,var(--navy) 0%,var(--surface) 50%,var(--navy) 100%)}
+.services-header{text-align:center;margin-bottom:72px}
+.services-header .section-sub{margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service-card{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:36px;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;cursor:default}
+.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(30,144,255,0.08),transparent 60%);opacity:0;transition:opacity 0.4s}
+.service-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.service-card:hover::before{opacity:1}
+.service-icon{width:52px;height:52px;background:rgba(30,144,255,0.1);border:1px solid rgba(30,144,255,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:all 0.3s}
+.service-card:hover .service-icon{background:rgba(30,144,255,0.2);border-color:rgba(30,144,255,0.4)}
+.service-icon svg{width:24px;height:24px;stroke:var(--blue);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.service-name{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;transition:color 0.3s}
+.service-card:hover .service-name{color:var(--blue)}
+.service-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:24px}
+.service-tags{display:flex;flex-wrap:wrap;gap:8px}
+.service-tag{font-size:11px;font-weight:600;padding:4px 10px;background:rgba(30,144,255,0.08);border:1px solid rgba(30,144,255,0.15);border-radius:50px;color:var(--blue)}
+
+/* CASE STUDIES */
+#cases{background:var(--navy)}
+.cases-header{margin-bottom:72px}
+.cases-grid{display:grid;gap:24px}
+.case-card{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-xl);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;transition:all 0.4s;cursor:pointer;position:relative;overflow:hidden}
+.case-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0;transition:opacity 0.4s}
+.case-card:hover{border-color:var(--border);box-shadow:0 30px 80px rgba(0,0,0,0.5)}
+.case-card:hover::after{opacity:1}
+.case-industry{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.case-title{font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:16px}
+.case-situation{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:24px}
+.case-results{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+.case-result{background:rgba(30,144,255,0.06);border:1px solid rgba(30,144,255,0.12);border-radius:12px;padding:16px}
+.case-result-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--blue);line-height:1}
+.case-result-label{font-size:12px;color:var(--text2);margin-top:4px}
+.case-visual{background:linear-gradient(135deg,rgba(30,144,255,0.08),rgba(0,180,219,0.05));border:1px solid var(--border2);border-radius:var(--radius-lg);padding:32px;height:280px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.case-visual-label{font-size:12px;color:var(--text3);font-weight:500}
+.case-visual-chart{display:flex;align-items:flex-end;gap:8px;height:160px}
+.case-visual-bar{flex:1;border-radius:6px 6px 0 0;position:relative;overflow:hidden}
+.case-visual-bar::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--teal) 0%,var(--blue) 100%);opacity:0.8}
+.case-visual-before{background:rgba(255,255,255,0.08);height:40%}
+.case-visual-after{height:90%}
+.case-visual-labels{display:flex;gap:8px;font-size:11px;color:var(--text3)}
+.case-visual-labels span{flex:1;text-align:center}
+
+/* PROCESS */
+#process{background:linear-gradient(180deg,var(--navy) 0%,var(--surface) 100%)}
+.process-header{text-align:center;margin-bottom:80px}
+.process-timeline{position:relative;max-width:800px;margin:0 auto}
+.process-timeline::before{content:'';position:absolute;left:32px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--blue-mid),transparent)}
+.process-step{display:flex;gap:32px;margin-bottom:48px;position:relative}
+.process-step:last-child{margin-bottom:0}
+.step-num{width:64px;height:64px;flex-shrink:0;border-radius:50%;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--blue);position:relative;z-index:1;transition:all 0.3s}
+.process-step:hover .step-num{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 0 30px rgba(30,144,255,0.4)}
+.step-body{padding-top:16px}
+.step-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.step-desc{font-size:15px;color:var(--text2);line-height:1.7}
+
+/* ABOUT */
+#about{background:var(--navy)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-portrait{position:relative}
+.portrait-wrap{width:100%;aspect-ratio:3/4;background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-xl);overflow:hidden;position:relative}
+.portrait-wrap::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,14,26,0.85) 100%);z-index:1;pointer-events:none}
+.portrait-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+.portrait-wrap:hover img{transform:scale(1.03)}
+.portrait-badge{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(8,14,26,0.9);border:1px solid var(--border);border-radius:50px;padding:10px 20px;white-space:nowrap;backdrop-filter:blur(20px);font-size:13px;font-weight:600}
+.about-content{display:flex;flex-direction:column;gap:0}
+.about-name{font-size:clamp(36px,4vw,52px);font-weight:700;margin-bottom:8px}
+.about-role{font-size:16px;color:var(--blue);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:32px}
+.about-bio{font-size:16px;color:var(--text2);line-height:1.8;margin-bottom:32px}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px}
+.value-item{display:flex;align-items:flex-start;gap:12px}
+.value-icon{width:36px;height:36px;flex-shrink:0;background:rgba(30,144,255,0.1);border:1px solid rgba(30,144,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.value-icon svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.value-text strong{display:block;font-size:14px;font-weight:600;margin-bottom:2px}
+.value-text span{font-size:13px;color:var(--text2)}
+
+/* TESTIMONIALS */
+#testimonials{background:linear-gradient(180deg,var(--navy) 0%,var(--surface) 100%)}
+.testimonials-header{text-align:center;margin-bottom:64px}
+.testimonials-track{overflow:hidden;position:relative}
+.testimonials-slides{display:flex;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+.testimonial-slide{min-width:100%;padding:0 24px}
+.testimonial-card{max-width:800px;margin:0 auto;background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-xl);padding:56px;position:relative}
+.testimonial-card::before{content:'\201C';position:absolute;top:24px;left:40px;font-size:120px;font-family:'Space Grotesk',sans-serif;color:rgba(30,144,255,0.1);line-height:1}
+.testimonial-text{font-size:clamp(18px,2.5vw,22px);line-height:1.65;color:var(--text);margin-bottom:40px;position:relative;z-index:1}
+.testimonial-author{display:flex;align-items:center;gap:16px}
+.author-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--blue-mid),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
+.author-name{font-weight:700;font-size:15px;margin-bottom:2px}
+.author-company{font-size:13px;color:var(--text2)}
+.testimonial-stars{margin-left:auto;color:var(--orange);font-size:16px;letter-spacing:2px}
+.testimonials-nav{display:flex;justify-content:center;gap:12px;margin-top:40px}
+.t-dot{width:8px;height:8px;border-radius:50%;background:var(--text3);cursor:pointer;transition:all 0.3s;border:none}
+.t-dot.active{background:var(--blue);width:24px;border-radius:4px}
+.testimonials-arrows{display:flex;justify-content:center;gap:12px;margin-top:24px}
+.t-arrow{width:44px;height:44px;border-radius:50%;background:var(--surface2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;color:var(--text2)}
+.t-arrow:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.t-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* FAQ */
+#faq{background:var(--navy)}
+.faq-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:80px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{border-radius:12px;overflow:hidden;background:var(--surface2);border:1px solid var(--border2);transition:border-color 0.3s}
+.faq-item.open{border-color:var(--border)}
+.faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;text-align:left;gap:16px;transition:color 0.3s}
+.faq-question:hover{color:var(--blue)}
+.faq-icon{width:24px;height:24px;flex-shrink:0;background:rgba(30,144,255,0.1);border:1px solid rgba(30,144,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s;color:var(--blue);font-size:16px;line-height:1}
+.faq-item.open .faq-icon{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1),padding 0.3s}
+.faq-answer-inner{padding:0 24px 20px;font-size:15px;color:var(--text2);line-height:1.7}
+.faq-item.open .faq-answer{max-height:300px}
+
+/* CONTACT */
+#contact{background:linear-gradient(180deg,var(--navy) 0%,var(--surface) 50%,var(--navy) 100%);position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:600px;background:radial-gradient(circle,rgba(30,144,255,0.1) 0%,transparent 70%);pointer-events:none}
+.contact-inner{position:relative;z-index:1;text-align:center;max-width:720px;margin:0 auto}
+.contact-title{font-size:clamp(36px,6vw,72px);font-weight:700;margin-bottom:24px;line-height:1.05}
+.contact-sub{font-size:18px;color:var(--text2);line-height:1.7;margin-bottom:48px}
+.contact-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:56px}
+.contact-info{display:flex;flex-wrap:wrap;justify-content:center;gap:32px}
+.contact-link{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text2);transition:color 0.2s}
+.contact-link:hover{color:var(--blue)}
+.contact-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 24px 32px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:24px}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+.footer-links a{font-size:14px;color:var(--text3);transition:color 0.2s}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:32px;border-top:1px solid var(--border2)}
+.footer-copy{font-size:13px;color:var(--text3)}
+.footer-tagline{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3)}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+.reveal-delay-4{transition-delay:0.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;gap:48px}
+  .hero-visual{display:none}
+  .hero-mobile-kpis{display:block}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .about-portrait{max-width:400px;margin:0 auto}
+  .faq-grid{grid-template-columns:1fr}
+  .case-card{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .section{padding:80px 0}
+  .nav-links,.nav-cta .btn:not(.btn-primary){display:none}
+  .hamburger{display:flex}
+  .services-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .process-timeline::before{left:24px}
+  .step-num{width:48px;height:48px;font-size:15px}
+  .hero-btns{flex-direction:column;align-items:flex-start}
+  .contact-btns{flex-direction:column;align-items:center}
+  .footer-top{flex-direction:column;align-items:flex-start}
+  .about-values{grid-template-columns:1fr}
+  .case-results{grid-template-columns:1fr 1fr}
+  .hero-trust{flex-direction:column;align-items:center;justify-content:center;width:100%;text-align:center;gap:14px;margin-top:32px;padding-top:32px}
+  .hero-trust-avatars{display:flex;justify-content:center;width:100%}
+  .hero-trust-avatars span{width:40px;height:40px;font-size:14px}
+  .hero-trust-text{font-size:15px;text-align:center;width:100%}
+  .hero-trust-text strong{font-size:17px;display:block;margin-bottom:4px}
+}
+@media(max-width:480px){
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .trust-item{padding:32px 20px}
+  .hero-trust{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="38" height="38" rx="9" fill="#080E1A"/>
+        <defs>
+          <linearGradient id="lgN" x1="5" y1="7" x2="33" y2="31" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#5BB8FF"/>
+            <stop offset="100%" stop-color="#1E5FFF"/>
+          </linearGradient>
+        </defs>
+        <!-- Outer M -->
+        <path d="M6 30V9L19 21L32 9V30" stroke="url(#lgN)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- Inner M -->
+        <path d="M10 30V16L19 24L28 16V30" stroke="url(#lgN)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.45"/>
+      </svg>
+      <div class="logo-text">MRZENA<span>Marketing</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Služby</a>
+      <a href="#cases">Případové studie</a>
+      <a href="#process">Spolupráce</a>
+      <a href="#about">O mně</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-secondary" style="padding:10px 20px;font-size:14px">Kontakt</a>
+      <a href="https://calendly.com/mrzenapavel33/30min" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 20px;font-size:14px">Nezávazná konzultace</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMobile()">Služby</a>
+  <a href="#cases" onclick="closeMobile()">Případové studie</a>
+  <a href="#process" onclick="closeMobile()">Spolupráce</a>
+  <a href="#about" onclick="closeMobile()">O mně</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="https://calendly.com/mrzenapavel33/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg" onclick="closeMobile()">Nezávazná konzultace</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="badge"><span class="badge-dot"></span>Výkonnostní marketing</div>
+      </div>
+      <h1 class="hero-h1">
+        Pomáhám firmám růst<br>
+        <span class="grad" style="text-transform:uppercase;letter-spacing:-0.01em">Profitabilně</span><br>
+        díky výkonnostnímu marketingu
+      </h1>
+      <p class="hero-sub">Navrhuji strategie, spravuji reklamy a optimalizuji celý marketingový funnel tak, aby reklama vydělávala – ne jen utrácela.</p>
+      <div class="hero-btns">
+        <a href="https://calendly.com/mrzenapavel33/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          Nezávazná konzultace
+        </a>
+        <a href="#cases" class="btn btn-secondary btn-lg">
+          Případové studie
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-avatars">
+          <span>TN</span><span>MK</span><span>PJ</span><span>AV</span>
+        </div>
+        <div class="hero-trust-text">
+          <strong>20+ spokojených klientů</strong><br>
+          průměrné ROAS přes 4,8×
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="results-wrap">
+        <div class="results-header">
+          <div class="results-title">Největší výsledky roku 2025</div>
+          <div class="results-sub">Výběr projektů, na kterých jsem měl možnost pracovat.</div>
+        </div>
+        <div class="results-cards">
+          <!-- Card 1 -->
+          <div class="rc">
+            <div class="rc-big"><span data-hero-count="70" data-suffix=" %">0</span></div>
+            <div class="rc-sub">15 → 25 mil. Kč</div>
+            <div class="rc-desc">Nárůst meziročního obratu během 6 měsíců.</div>
+          </div>
+          <!-- Card 2 -->
+          <div class="rc">
+            <div class="rc-big"><span data-hero-count="45" data-suffix=" mil. Kč">0</span></div>
+            <div class="rc-sub">10 domů · 80 tis. Kč do reklamy</div>
+            <div class="rc-desc">Hodnota realizovaných zakázek.</div>
+          </div>
+        </div>
+        <a href="#cases" class="results-cta">
+          Zobrazit podrobné případové studie
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="floating-pill pill-1">
+        <div class="icon" style="background:rgba(34,197,94,0.15)">📈</div>
+        <span style="color:#22C55E">+70% obrat YoY</span>
+      </div>
+      <div class="floating-pill pill-2">
+        <div class="icon" style="background:rgba(30,144,255,0.15)">⚡</div>
+        <span style="color:var(--blue)">Meta Ads · Google Ads</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section id="trust">
+  <div class="trust-grid">
+    <div class="trust-item reveal">
+      <div class="trust-num"><span class="grad-blue" data-count="15">0</span><span class="grad-blue">M+</span></div>
+      <div class="trust-label">Kč spravovaného rozpočtu</div>
+    </div>
+    <div class="trust-item reveal reveal-delay-1">
+      <div class="trust-num"><span class="grad-blue" data-count="120">0</span><span class="grad-blue">+</span></div>
+      <div class="trust-label">Úspěšných kampaní</div>
+    </div>
+    <div class="trust-item reveal reveal-delay-2">
+      <div class="trust-num"><span class="grad-blue" data-count="20">0</span><span class="grad-blue">+</span></div>
+      <div class="trust-label">Spokojených klientů</div>
+    </div>
+    <div class="trust-item reveal reveal-delay-3">
+      <div class="trust-num"><span class="grad-blue" data-count="3">0</span><span class="grad-blue">+</span></div>
+      <div class="trust-label">Let zkušeností</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-label reveal">Moje služby</div>
+      <h2 class="section-title reveal reveal-delay-1">Vše, co potřebujete<br>k profitabilnímu růstu</h2>
+      <p class="section-sub reveal reveal-delay-2">Komplexní přístup k výkonnostnímu marketingu – od strategie přes realizaci až po měření a optimalizaci.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="service-name">Meta Ads</div>
+        <p class="service-desc">Propracované kampaně na Facebooku a Instagramu zaměřené na akvizici, retargeting a škálování. Kreativy, testování a optimalizace výkonu na denní bázi.</p>
+        <div class="service-tags">
+          <span class="service-tag">Facebook Ads</span>
+          <span class="service-tag">Instagram Ads</span>
+          <span class="service-tag">Retargeting</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+        </div>
+        <div class="service-name">Google Ads</div>
+        <p class="service-desc">Search, Shopping, Performance Max a Display kampaně s precizní strukturou, bid strategiemi a pravidelnou optimalizací klíčových slov i inzerátů.</p>
+        <div class="service-tags">
+          <span class="service-tag">Search</span>
+          <span class="service-tag">Shopping</span>
+          <span class="service-tag">Performance Max</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="service-name">Landing Pages</div>
+        <p class="service-desc">Konverzní landing pages navržené s důrazem na psychologii zákazníka, jasné CTA a rychlé načítání. A/B testování pro maximalizaci konverzního poměru.</p>
+        <div class="service-tags">
+          <span class="service-tag">CRO design</span>
+          <span class="service-tag">A/B testy</span>
+          <span class="service-tag">UX</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10l6-6 6 6v10M10 20v-5h4v5"/></svg>
+        </div>
+        <div class="service-name">Marketingové strategie</div>
+        <p class="service-desc">Komplexní strategie zahrnující positioning, zákaznické cesty, komunikaci a mediaplán. Propojení všech kanálů do koherentního funnelu.</p>
+        <div class="service-tags">
+          <span class="service-tag">Full-funnel</span>
+          <span class="service-tag">Positioning</span>
+          <span class="service-tag">Mediaplán</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <div class="service-name">Analytika</div>
+        <p class="service-desc">Nastavení sledování konverzí, GA4, Meta Pixel, server-side tracking a reporting dashboardy. Rozhodujte se vždy na základě dat, ne dojmů.</p>
+        <div class="service-tags">
+          <span class="service-tag">GA4</span>
+          <span class="service-tag">GTM</span>
+          <span class="service-tag">Looker Studio</span>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <div class="service-name">Automatizace marketingu</div>
+        <p class="service-desc">E-mailové sekvence, lead nurturing, dynamické reklamy a integrace nástrojů pro automatické oslovení správného zákazníka ve správný čas.</p>
+        <div class="service-tags">
+          <span class="service-tag">E-mail flows</span>
+          <span class="service-tag">CRM integrace</span>
+          <span class="service-tag">Lead nurturing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases" class="section">
+  <div class="container">
+    <div class="cases-header">
+      <div class="section-label reveal">Případové studie</div>
+      <h2 class="section-title reveal reveal-delay-1">Reálné výsledky<br><span class="grad">reálných klientů</span></h2>
+      <p class="section-sub reveal reveal-delay-2">Čísla mluví za vše. Podívejte se, jak konkrétní strategie přinesly měřitelné výsledky.</p>
+    </div>
+    <div class="cases-grid">
+
+      <div class="case-card reveal">
+        <div class="case-info">
+          <div class="case-industry">E-commerce · Móda</div>
+          <h3 class="case-title">Český e-shop s módou</h3>
+          <p class="case-situation">Klient přišel s ROAS 1,8× a rostoucí cenou za akvizici. Reklamy nebyly profitabilní a škálování se zdálo nemožné.</p>
+          <p style="font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.7"><strong style="color:var(--white)">Co jsme udělali:</strong> Kompletní restrukturalizace Meta Ads, nové kreativy zaměřené na UGC styl, optimalizace landing pages a nastavení server-side trackingu.</p>
+          <div class="case-results">
+            <div class="case-result">
+              <div class="case-result-val">4.9×</div>
+              <div class="case-result-label">ROAS (z 1,8×)</div>
+            </div>
+            <div class="case-result">
+              <div class="case-result-val">−38%</div>
+              <div class="case-result-label">Cena za akvizici</div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-secondary">Zobrazit případovou studii <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="case-visual">
+          <span class="case-visual-label">Vývoj ROAS</span>
+          <div class="case-visual-chart">
+            <div class="case-visual-bar case-visual-before" style="width:40%"></div>
+            <div class="case-visual-bar case-visual-after" style="width:40%"></div>
+          </div>
+          <div class="case-visual-labels">
+            <span>Před</span>
+            <span>Po</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal reveal-delay-1">
+        <div class="case-info">
+          <div class="case-industry">B2B · Software</div>
+          <h3 class="case-title">SaaS platforma pro HR</h3>
+          <p class="case-situation">Startup bez nastavené akvizice, pouze organický traffic. Potřeba škálovatelného kanálu pro generování B2B leadů s rozumnou cenou za lead.</p>
+          <p style="font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.7"><strong style="color:var(--white)">Co jsme udělali:</strong> Spuštění Google Search Ads, LinkedIn Lead Gen a konverzní landing page. Implementace CRM propojení a automatizace lead nurturingu.</p>
+          <div class="case-results">
+            <div class="case-result">
+              <div class="case-result-val">+127%</div>
+              <div class="case-result-label">Nových leadů / měsíc</div>
+            </div>
+            <div class="case-result">
+              <div class="case-result-val">650 Kč</div>
+              <div class="case-result-label">Cena za kvalif. lead</div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-secondary">Zobrazit případovou studii <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="case-visual">
+          <span class="case-visual-label">Leady / měsíc</span>
+          <div class="case-visual-chart">
+            <div class="case-visual-bar" style="width:40%;height:30%;background:rgba(255,255,255,0.08)"></div>
+            <div class="case-visual-bar" style="width:40%;height:85%;background:linear-gradient(180deg,#00B4DB,#1E90FF)"></div>
+          </div>
+          <div class="case-visual-labels">
+            <span>Před</span>
+            <span>Po</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="section">
+  <div class="container">
+    <div class="process-header">
+      <div class="section-label reveal">Jak spolupráce probíhá</div>
+      <h2 class="section-title reveal reveal-delay-1">Od prvního hovoru<br><span class="grad">k měřitelným výsledkům</span></h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin:0 auto">Strukturovaný proces, který zajišťuje, že každý krok přináší hodnotu a výsledky jsou předvídatelné.</p>
+    </div>
+    <div class="process-timeline">
+      <div class="process-step reveal">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Úvodní konzultace</div>
+          <p class="step-desc">Bezplatný 30minutový hovor, kde probereme vaše cíle, současný stav marketingu, rozpočty a očekávání. Zjistím, zda a jak vám mohu skutečně pomoci.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Audit a analýza</div>
+          <p class="step-desc">Hloubkový audit vašich kampaní, webu, analytiky a konkurence. Identifikuji příležitosti, bottlenecky a "quick wins", které přinesou výsledky nejrychleji.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Strategie a plán</div>
+          <p class="step-desc">Vypracuji konkrétní marketingovou strategii s jasným plánem, časovým harmonogramem, KPIs a predikcí výsledků. Nic obecného – vše přizpůsobeno vašemu byznysu.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Spuštění kampaní</div>
+          <p class="step-desc">Technické nastavení trackingu, tvorba kreativ, struktura kampaní a spuštění. Každý detail je ověřen před startem, aby byl launch co nejefektivnější.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Optimalizace</div>
+          <p class="step-desc">Průběžné testování, analýza dat a iterace. Denní monitoring výkonu, týdenní reporting a pravidelné strategické hovory. Vždy víte, jak kampaně fungují.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <div class="step-title">Škálování</div>
+          <p class="step-desc">Jakmile je systém profitabilní, škálujeme – zvyšujeme rozpočty, rozšiřujeme na nové trhy nebo kanály. Cílem je udržitelný, předvídatelný růst.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait reveal">
+        <div class="portrait-wrap">
+          <img src="brand/851D6031-4F1F-4AF3-AF4A-7074C30A517A.PNG" alt="Pavel Mrzena">
+          <div class="portrait-badge">✦ Pavel Mrzena · Výkonnostní specialista</div>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-1">
+        <div class="section-label">O mně</div>
+        <h2 class="about-name">Pavel Mrzena</h2>
+        <div class="about-role">Performance Marketing Specialist</div>
+        <p class="about-bio">Věřím, že marketing musí být měřitelný a profitabilní. Nepracuji jen s dojmy – každé rozhodnutí stavím na datech, testech a reálných výsledcích.</p>
+        <p class="about-bio" style="margin-top:-16px">Za posledních 3+ let jsem pomohl firmám z e-commerce i B2B segmentu škálovat jejich akvizici, snižovat cenu za konverzi a budovat marketingové systémy, které fungují dlouhodobě. Moje práce nekončí spuštěním kampaně – začíná tím.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+            <div class="value-text"><strong>Data na prvním místě</strong><span>Rozhodnutí vždy na základě čísel</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <div class="value-text"><strong>Transparentnost</strong><span>Pravidelné reporty bez skrytých čísel</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="value-text"><strong>Výkon a ROI</strong><span>Každá koruna musí mít smysl</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="value-text"><strong>Dlouhodobá spolupráce</strong><span>Partnerství, ne jednorázový projekt</span></div>
+          </div>
+        </div>
+        <a href="https://wa.me/420728834912?text=Dobr%C3%BD%20den%20pane%20Mrzeno%2C%20kdy%20si%20m%C5%AF%C5%BEeme%20domluvit%20konzultaci%20ohledn%C4%9B%20mo%C5%BEn%C3%A9%20marketingov%C3%A9%20spolupr%C3%A1ce%3F" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Spojme se</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="testimonials-header">
+      <div class="section-label reveal">Reference klientů</div>
+      <h2 class="section-title reveal reveal-delay-1">Co říkají klienti</h2>
+    </div>
+    <div class="testimonials-track reveal">
+      <div class="testimonials-slides" id="tSlides">
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Pavel kompletně změnil způsob, jakým přemýšlíme o performance marketingu. Za 4 měsíce spolupráce jsme snížili CPA o 38 % a zdvojnásobili obrat z reklam. Konečně máme marketing, který skutečně vydělává."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">TN</div>
+              <div>
+                <div class="author-name">Tomáš Novák</div>
+                <div class="author-company">CEO, Módní e-shop</div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Spolupráce s Pavlem je přesně to, co jsem hledal. Žádné obecné řeči, jen konkrétní data, jasné KPIs a výsledky. Náš cost per lead klesl pod 700 Kč a pipeline nikdy nebyl plnější."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MK</div>
+              <div>
+                <div class="author-name">Martin Kovář</div>
+                <div class="author-company">Founder, SaaS platforma</div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Oceňuji hlavně transparentnost a proaktivní přístup. Pavel nám nastavil celý tracking systém, reporting dashboard a pravidelně nás informuje o výkonu. Konečně víme, co reklama přináší."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AV</div>
+              <div>
+                <div class="author-name">Andrea Veselá</div>
+                <div class="author-company">Marketing Director, B2B firma</div>
+              </div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-nav" id="tNav">
+      <button class="t-dot active" data-idx="0"></button>
+      <button class="t-dot" data-idx="1"></button>
+      <button class="t-dot" data-idx="2"></button>
+    </div>
+    <div class="testimonials-arrows">
+      <button class="t-arrow" id="tPrev"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="t-arrow" id="tNext"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <div class="section-label reveal">FAQ</div>
+        <h2 class="section-title reveal reveal-delay-1">Nejčastější<br>otázky</h2>
+        <p class="section-sub reveal reveal-delay-2" style="margin-bottom:40px">Máte další dotazy? Neváhejte se ozvat – rád vše zodpovím osobně.</p>
+        <a href="https://wa.me/420728834912?text=Dobr%C3%BD%20den%20pane%20Mrzeno%2C%20kdy%20si%20m%C5%AF%C5%BEeme%20domluvit%20konzultaci%20ohledn%C4%9B%20mo%C5%BEn%C3%A9%20marketingov%C3%A9%20spolupr%C3%A1ce%3F" target="_blank" rel="noopener" class="btn btn-primary reveal reveal-delay-3">Zeptat se přímo</a>
+      </div>
+      <div class="faq-list reveal reveal-delay-1">
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Kolik spolupráce stojí?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Cena závisí na rozsahu spolupráce, počtu spravovaných kanálů a vašem reklamním rozpočtu. Základní správa kampaní začíná od 15 000 Kč/měsíc. Po úvodní konzultaci vám připravím konkrétní nabídku na míru. Nepracuji jako agentura s paušálním procentem z rozpočtu – moje odměna reflektuje skutečnou práci a výsledky.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Jak dlouho trvá, než uvidím výsledky?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">První měřitelné výsledky se obvykle dostavují do 4–8 týdnů od spuštění. Algoritmy platforem potřebují čas na optimalizaci. Plný potenciál kampaní se projeví po 3–4 měsících. Realisticky: neprodávám zázraky přes noc, ale systematický růst postavený na datech.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Jaký minimální rozpočet na reklamy potřebuji?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Pro Meta Ads doporučuji minimum 15 000–20 000 Kč/měsíc na reklamní výdaje. Pro Google Ads záleží na konkurenci v oboru – reálné minimum je 10 000–25 000 Kč/měsíc. S nižšími rozpočty je škálování obtížné a algoritmy nemají dostatek dat pro optimalizaci.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Jak probíhá komunikace?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Primárně přes e-mail a pravidelné video hovory (1–2× měsíčně). Pro urgentní věci jsem dostupný i přes Slack nebo WhatsApp. Každý měsíc dostanete detailní report s výsledky, komentáři a plánem na další měsíc. Žádné černé díry – vždy víte, co se děje.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Na jak dlouho se vážu?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Doporučuji minimálně 3 měsíce, abychom mohli kampagně dát prostor pro optimalizaci a sběr dat. Poté spolupráce pokračuje měsíc po měsíci s výpovědní lhůtou 30 dní. Nevěřím v dlouhodobé uzamčení bez výsledků – pokud jsem dobrý, odejít nebudete chtít.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Jak měříte výsledky?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Měříme to, na čem záleží vašemu byznysu – ROAS, CPA, CPL, obrat, počet konverzí, marginalní ROAS a LTV zákazníků. Vše je dostupné v live dashboardu v Looker Studiu. Žádné "dosáhli jsme milion impresí" – jen čísla, která ovlivňují váš zisk.</div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="section-label reveal" style="justify-content:center;display:flex">Kontakt</div>
+      <h2 class="contact-title reveal reveal-delay-1">
+        Pojďme společně<br><span class="grad">posunout váš marketing.</span>
+      </h2>
+      <p class="contact-sub reveal reveal-delay-2">Nezávazná 30minutová konzultace zdarma. Zjistíme, zda je spolupráce oboustranně zajímavá – bez tlaku, bez závazku.</p>
+      <div class="contact-btns reveal reveal-delay-3">
+        <a href="https://calendly.com/mrzenapavel33/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          Domluvit konzultaci
+        </a>
+        <a href="https://wa.me/420728834912?text=Dobr%C3%BD%20den%20pane%20Mrzeno%2C%20kdy%20si%20m%C5%AF%C5%BEeme%20domluvit%20konzultaci%20ohledn%C4%9B%20mo%C5%BEn%C3%A9%20marketingov%C3%A9%20spolupr%C3%A1ce%3F" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Napsat zprávu
+        </a>
+      </div>
+      <div class="contact-info reveal reveal-delay-4">
+        <a href="mailto:pavel@mrzenamarketing.cz" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          pavel@mrzenamarketing.cz
+        </a>
+        <a href="tel:+420728834912" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.19h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          +420 728 834 912
+        </a>
+        <a href="https://www.linkedin.com/in/pavel-mrzena/" class="contact-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="#" class="logo">
+        <svg class="logo-mark" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="9" fill="#080E1A"/>
+          <defs>
+            <linearGradient id="lgF" x1="5" y1="7" x2="33" y2="31" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#5BB8FF"/>
+              <stop offset="100%" stop-color="#1E5FFF"/>
+            </linearGradient>
+          </defs>
+          <path d="M6 30V9L19 21L32 9V30" stroke="url(#lgF)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M10 30V16L19 24L28 16V30" stroke="url(#lgF)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.45"/>
+        </svg>
+        <div class="logo-text">MRZENA<span>Marketing</span></div>
+      </a>
+      <div class="footer-links">
+        <a href="#services">Služby</a>
+        <a href="#cases">Případové studie</a>
+        <a href="#process">Spolupráce</a>
+        <a href="#about">O mně</a>
+        <a href="#testimonials">Reference</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 MRZENA Marketing. Všechna práva vyhrazena.</div>
+      <div class="footer-tagline">DATA · STRATEGIE · RŮST</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV SCROLL
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('nav-scrolled',window.scrollY>20);
+});
+
+// HAMBURGER
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+function closeMobile(){mobileMenu.classList.remove('open')}
+
+// HERO CANVAS
+(function(){
+  const canvas=document.getElementById('heroCanvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let w,h,particles=[];
+  function resize(){w=canvas.width=canvas.offsetWidth;h=canvas.height=canvas.offsetHeight}
+  resize();
+  window.addEventListener('resize',resize);
+  function Particle(){
+    this.x=Math.random()*w;
+    this.y=Math.random()*h;
+    this.vx=(Math.random()-0.5)*0.3;
+    this.vy=(Math.random()-0.5)*0.3;
+    this.r=Math.random()*1.5+0.5;
+    this.alpha=Math.random()*0.4+0.1;
+  }
+  for(let i=0;i<120;i++)particles.push(new Particle());
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=w;if(p.x>w)p.x=0;
+      if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(30,144,255,${p.alpha})`;
+      ctx.fill();
+    });
+    particles.forEach((a,i)=>{
+      particles.slice(i+1).forEach(b=>{
+        const dx=a.x-b.x,dy=a.y-b.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<120){
+          ctx.beginPath();
+          ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+          ctx.strokeStyle=`rgba(30,144,255,${0.06*(1-dist/120)})`;
+          ctx.lineWidth=0.5;ctx.stroke();
+        }
+      });
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// SCROLL REVEAL
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.1});
+reveals.forEach(el=>observer.observe(el));
+
+// COUNT UP
+function countUp(el,target,duration=1800){
+  let start=0,startTime=null;
+  function step(ts){
+    if(!startTime)startTime=ts;
+    const progress=Math.min((ts-startTime)/duration,1);
+    const ease=1-Math.pow(1-progress,3);
+    el.textContent=Math.floor(ease*target);
+    if(progress<1)requestAnimationFrame(step);
+    else el.textContent=target;
+  }
+  requestAnimationFrame(step);
+}
+const countObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-count]').forEach(el=>{
+        countUp(el,parseInt(el.dataset.count));
+      });
+      countObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('#trust').forEach(el=>countObs.observe(el));
+
+// TESTIMONIALS SLIDER
+let tCurrent=0;
+const slides=document.getElementById('tSlides');
+const dots=document.querySelectorAll('.t-dot');
+function goTo(idx){
+  tCurrent=Math.max(0,Math.min(idx,dots.length-1));
+  slides.style.transform=`translateX(-${tCurrent*100}%)`;
+  dots.forEach((d,i)=>d.classList.toggle('active',i===tCurrent));
+}
+document.getElementById('tPrev').addEventListener('click',()=>goTo(tCurrent-1));
+document.getElementById('tNext').addEventListener('click',()=>goTo(tCurrent+1));
+dots.forEach(d=>d.addEventListener('click',()=>goTo(parseInt(d.dataset.idx))));
+let autoSlide=setInterval(()=>goTo((tCurrent+1)%dots.length),5000);
+document.querySelector('.testimonials-track').addEventListener('mouseenter',()=>clearInterval(autoSlide));
+document.querySelector('.testimonials-track').addEventListener('mouseleave',()=>{autoSlide=setInterval(()=>goTo((tCurrent+1)%dots.length),5000)});
+
+// FAQ
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+// HERO RESULT CARDS COUNT-UP
+function heroCountUp(el,target,suffix,duration=1600){
+  let startTime=null;
+  function step(ts){
+    if(!startTime)startTime=ts;
+    const progress=Math.min((ts-startTime)/duration,1);
+    const ease=1-Math.pow(1-progress,3);
+    el.textContent=Math.floor(ease*target)+suffix;
+    if(progress<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+setTimeout(()=>{
+  document.querySelectorAll('[data-hero-count]').forEach(el=>{
+    heroCountUp(el,parseInt(el.dataset.heroCount),el.dataset.suffix||'');
+  });
+},400);
+
+// SMOOTH ACTIVE NAV
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)current=s.id});
+  navLinks.forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+current?'#fff':'';
+  });
+},{passive:true});
+</script>
+</body>
+</html>
