@@ -187,6 +187,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:al
 .case-card:hover{border-color:var(--border);box-shadow:0 30px 80px rgba(0,0,0,0.5)}
 .case-card:hover::after{opacity:1}
 .case-industry{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.case-logo-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.case-logo-row .case-industry{margin-bottom:0}
+.case-logo{width:44px;height:44px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:6px;flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,0.25)}
+.case-logo img{width:100%;height:100%;object-fit:contain}
 .case-title{font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:16px}
 .case-situation{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:24px}
 .case-results{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
@@ -591,58 +595,61 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
 
       <div class="case-card reveal">
         <div class="case-info">
-          <div class="case-industry">E-commerce · Móda</div>
-          <h3 class="case-title">Český e-shop s módou</h3>
-          <p class="case-situation">Klient přišel s ROAS 1,8× a rostoucí cenou za akvizici. Reklamy nebyly profitabilní a škálování se zdálo nemožné.</p>
-          <p style="font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.7"><strong style="color:var(--white)">Co jsme udělali:</strong> Kompletní restrukturalizace Meta Ads, nové kreativy zaměřené na UGC styl, optimalizace landing pages a nastavení server-side trackingu.</p>
+          <div class="case-industry">Osobní rozvoj · Online koučink</div>
+          <h3 class="case-title">Systém, který Ále přivádí platící klientky</h3>
+          <p class="case-situation">Ála měla jasnou vizi, komu chce pomáhat, ale chyběla jí přesně definovaná cílová skupina, komunikace a systém, který by službu dokázal pravidelně prodávat.</p>
+          <p style="font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.7"><strong style="color:var(--white)">Co jsme udělali:</strong> Zúžili jsme cílovou skupinu na ženy po rozvodu řešící přejídání, sladké a alkohol, a postavili kompletní proces od reklamy přes první kontakt až po konzultaci a prodej.</p>
           <div class="case-results">
             <div class="case-result">
-              <div class="case-result-val">4.9×</div>
-              <div class="case-result-label">ROAS (z 1,8×)</div>
+              <div class="case-result-val">100 000+ Kč</div>
+              <div class="case-result-label">Vygenerovaný zisk</div>
             </div>
             <div class="case-result">
-              <div class="case-result-val">−38%</div>
-              <div class="case-result-label">Cena za akvizici</div>
+              <div class="case-result-val">7 350 Kč</div>
+              <div class="case-result-label">Investice do reklamy</div>
             </div>
           </div>
           <a href="#contact" class="btn btn-secondary">Zobrazit případovou studii <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
         <div class="case-visual">
-          <span class="case-visual-label">Vývoj ROAS</span>
+          <span class="case-visual-label">Investice → zisk za 2,5 měsíce</span>
           <div class="case-visual-chart">
-            <div class="case-visual-bar case-visual-before" style="width:40%"></div>
-            <div class="case-visual-bar case-visual-after" style="width:40%"></div>
+            <div class="case-visual-bar" style="width:40%;height:12%;background:rgba(255,255,255,0.08)"></div>
+            <div class="case-visual-bar" style="width:40%;height:95%;background:linear-gradient(180deg,#00B4DB,#1E90FF)"></div>
           </div>
           <div class="case-visual-labels">
-            <span>Před</span>
-            <span>Po</span>
+            <span>Investice</span>
+            <span>Zisk</span>
           </div>
         </div>
       </div>
 
       <div class="case-card reveal reveal-delay-1">
         <div class="case-info">
-          <div class="case-industry">B2B · Software</div>
-          <h3 class="case-title">SaaS platforma pro HR</h3>
-          <p class="case-situation">Startup bez nastavené akvizice, pouze organický traffic. Potřeba škálovatelného kanálu pro generování B2B leadů s rozumnou cenou za lead.</p>
-          <p style="font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.7"><strong style="color:var(--white)">Co jsme udělali:</strong> Spuštění Google Search Ads, LinkedIn Lead Gen a konverzní landing page. Implementace CRM propojení a automatizace lead nurturingu.</p>
+          <div class="case-logo-row">
+            <div class="case-logo"><img src="brand/clients/popkornovac-logo.webp" alt="Popkornovač.cz logo"></div>
+            <div class="case-industry">E-commerce · Domácí spotřebiče</div>
+          </div>
+          <h3 class="case-title">Meziroční růst obratu e-shopu Popkornovač.cz</h3>
+          <p class="case-situation">Majitel e-shopu hledal partnera pro výkonnostní marketing, který dokáže dlouhodobě zvyšovat obrat při zachování zdravé návratnosti reklamních investic.</p>
+          <p style="font-size:14px;color:var(--text2);margin-bottom:24px;line-height:1.7"><strong style="color:var(--white)">Co jsme udělali:</strong> Optimalizace Google Ads a Sklik Ads, natočení vlastních reklamních videí pro Meta Ads a průběžné škálování rozpočtu na produkty s nejlepším výkonem.</p>
           <div class="case-results">
             <div class="case-result">
-              <div class="case-result-val">+127%</div>
-              <div class="case-result-label">Nových leadů / měsíc</div>
+              <div class="case-result-val">+33,57 %</div>
+              <div class="case-result-label">Meziroční růst obratu</div>
             </div>
             <div class="case-result">
-              <div class="case-result-val">650 Kč</div>
-              <div class="case-result-label">Cena za kvalif. lead</div>
+              <div class="case-result-val">+17,52 %</div>
+              <div class="case-result-label">Nárůst objednávek</div>
             </div>
           </div>
           <a href="#contact" class="btn btn-secondary">Zobrazit případovou studii <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
         <div class="case-visual">
-          <span class="case-visual-label">Leady / měsíc</span>
+          <span class="case-visual-label">Obrat e-shopu za 8 měsíců spolupráce</span>
           <div class="case-visual-chart">
-            <div class="case-visual-bar" style="width:40%;height:30%;background:rgba(255,255,255,0.08)"></div>
-            <div class="case-visual-bar" style="width:40%;height:85%;background:linear-gradient(180deg,#00B4DB,#1E90FF)"></div>
+            <div class="case-visual-bar" style="width:40%;height:60%;background:rgba(255,255,255,0.08)"></div>
+            <div class="case-visual-bar" style="width:40%;height:90%;background:linear-gradient(180deg,#00B4DB,#1E90FF)"></div>
           </div>
           <div class="case-visual-labels">
             <span>Před</span>
