@@ -60,6 +60,7 @@ button{cursor:pointer;border:none;font-family:'Inter',sans-serif}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);white-space:nowrap}
+button.btn{border:none;cursor:pointer}
 .btn-primary{background:var(--blue);color:#fff;box-shadow:0 0 30px rgba(30,144,255,0.35)}
 .btn-primary:hover{background:#2a9fff;box-shadow:0 0 50px rgba(30,144,255,0.55);transform:translateY(-2px)}
 .btn-secondary{background:rgba(255,255,255,0.05);color:var(--text);border:1px solid var(--border2);backdrop-filter:blur(10px)}
@@ -207,6 +208,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:al
 .case-visual-labels{display:flex;gap:8px;font-size:11px;color:var(--text3)}
 .case-visual-labels span{flex:1;text-align:center}
 
+/* CASE STUDY MODAL */
+body.modal-open{overflow:hidden}
+.case-modal-overlay{position:fixed;inset:0;background:rgba(5,9,17,0.8);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:24px;z-index:200;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.case-modal-overlay.open{opacity:1;pointer-events:auto}
+.case-modal{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-xl);max-width:760px;width:100%;max-height:88vh;overflow-y:auto;padding:56px;position:relative;transform:translateY(24px) scale(0.98);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1)}
+.case-modal-overlay.open .case-modal{transform:translateY(0) scale(1)}
+.case-modal-close{position:sticky;top:0;float:right;margin-left:16px;width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text2);transition:all 0.2s;z-index:2}
+.case-modal-close:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.case-modal-close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.case-modal-industry{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.case-modal-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3.2vw,30px);font-weight:700;line-height:1.25;margin-bottom:8px;max-width:88%}
+.case-modal-subtitle{font-size:16px;color:var(--text2);margin-bottom:28px;line-height:1.6}
+.case-modal-results{display:grid;gap:16px;margin-bottom:36px}
+.case-modal-body h4{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin:32px 0 12px}
+.case-modal-body h4:first-child{margin-top:0}
+.case-modal-body p{font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:16px}
+.case-modal-body ul{margin:0 0 16px;padding-left:20px}
+.case-modal-body li{font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:6px}
+.case-modal-quote{border-left:2px solid var(--blue);padding:4px 0 4px 20px;font-size:15px;font-style:italic;color:var(--text);line-height:1.75;margin:8px 0 16px}
+.case-modal-quote-author{font-size:13px;color:var(--text3);padding-left:22px}
+.case-modal-cta{margin-top:40px;padding-top:32px;border-top:1px solid var(--border2);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.case-modal-cta p{font-size:14px;color:var(--text2);margin:0;max-width:380px}
+
 /* PROCESS */
 #process{background:linear-gradient(180deg,var(--navy) 0%,var(--surface) 100%)}
 .process-header{text-align:center;margin-bottom:80px}
@@ -332,6 +356,10 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   .footer-top{flex-direction:column;align-items:flex-start}
   .about-values{grid-template-columns:1fr}
   .case-results{grid-template-columns:1fr 1fr}
+  .case-modal{padding:32px 24px}
+  .case-modal-title{max-width:100%}
+  .case-modal-cta{flex-direction:column;align-items:stretch;text-align:center}
+  .case-modal-cta p{max-width:100%}
   .hero-trust{flex-direction:column;align-items:center;justify-content:center;width:100%;text-align:center;gap:14px;margin-top:32px;padding-top:32px}
   .hero-trust-avatars{display:flex;justify-content:center;width:100%}
   .hero-trust-avatars span{width:40px;height:40px;font-size:14px}
@@ -609,7 +637,7 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
               <div class="case-result-label">Investice do reklamy</div>
             </div>
           </div>
-          <a href="#contact" class="btn btn-secondary">Zobrazit případovou studii <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button type="button" class="btn btn-secondary" onclick="openCaseModal('ala')">Zobrazit případovou studii <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
         </div>
         <div class="case-visual">
           <span class="case-visual-label">Investice → zisk za 2,5 měsíce</span>
@@ -643,7 +671,7 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
               <div class="case-result-label">Nárůst objednávek</div>
             </div>
           </div>
-          <a href="#contact" class="btn btn-secondary">Zobrazit případovou studii <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button type="button" class="btn btn-secondary" onclick="openCaseModal('popkorn')">Zobrazit případovou studii <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
         </div>
         <div class="case-visual">
           <span class="case-visual-label">Obrat e-shopu za 8 měsíců spolupráce</span>
@@ -661,6 +689,110 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
     </div>
   </div>
 </section>
+
+<!-- CASE STUDY MODALS -->
+<div class="case-modal-overlay" id="ala-modal" onclick="if(event.target===this)closeCaseModal('ala')">
+  <div class="case-modal">
+    <button type="button" class="case-modal-close" onclick="closeCaseModal('ala')" aria-label="Zavřít"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <div class="case-modal-industry">Osobní rozvoj · Online koučink</div>
+    <h3 class="case-modal-title">7 350 Kč do reklamy → více než 100 000 Kč zisku za 2,5 měsíce</h3>
+    <p class="case-modal-subtitle">Jak jsem pro Álu vytvořil systém, který jí přivádí platící klientky.</p>
+    <div class="case-modal-results" style="grid-template-columns:1fr 1fr">
+      <div class="case-result">
+        <div class="case-result-val">100 000+ Kč</div>
+        <div class="case-result-label">Vygenerovaný zisk</div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-val">7 350 Kč</div>
+        <div class="case-result-label">Investice do reklamy</div>
+      </div>
+    </div>
+    <div class="case-modal-body">
+      <h4>Výchozí situace</h4>
+      <p>Když za mnou Ála přišla, měla jasnou představu o tom, s čím chce lidem pomáhat. Chyběla jí ale přesně definovaná komunikace, cílová skupina a systém, který by její službu dokázal pravidelně prodávat.</p>
+      <p>Nechtěl jsem proto začít jednoduše spuštěním reklam. Nejdříve jsem potřeboval pochopit, komu přesně Ála pomáhá, jaký problém tyto ženy řeší a proč by měly chtít právě její pomoc.</p>
+      <h4>Od obecné služby ke konkrétnímu problému</h4>
+      <p>Společně jsme postupně definovali konkrétní směr, na který jsme celou komunikaci postavili. Zaměřili jsme se na ženy po rozvodu, které procházejí emočně náročným obdobím a zároveň řeší problémy spojené s přejídáním, sladkým nebo alkoholem.</p>
+      <p>Najednou jsme nemluvili ke „všem ženám, kterým chceme pomoci“. Mluvili jsme ke konkrétní ženě s konkrétním problémem. A právě to začalo měnit kvalitu lidí, kteří na nabídku reagovali.</p>
+      <h4>Jak jsem systém postupně stavěl</h4>
+      <p>Nešlo pouze o vytvoření jedné reklamy. Postupně jsem pracoval na celém procesu od prvního kontaktu až po samotnou spolupráci. Upravovali jsme:</p>
+      <ul>
+        <li>cílovou skupinu,</li>
+        <li>hlavní problém, který komunikujeme,</li>
+        <li>nabídku,</li>
+        <li>reklamní komunikaci,</li>
+        <li>způsob, jakým se zájemkyně dostanou k prvnímu kontaktu,</li>
+        <li>komunikaci při prvním setkání,</li>
+        <li>způsob vedení konzultace,</li>
+        <li>kvalifikaci potenciálních klientek,</li>
+        <li>celý proces od zájmu až po nákup.</li>
+      </ul>
+      <p>S každou další zkušeností jsme systém zpřesňovali. Nejprve jsme zjišťovali, kdo na komunikaci reaguje. Potom jsme postupně selektovali kvalitnější zájemkyně a upravovali komunikaci tak, aby k Ale přicházely ženy, kterým její služba skutečně odpovídá.</p>
+      <h4>Výsledky přišly postupně</h4>
+      <p>Největší část výsledků nepřišla hned na začátku. S každou další úpravou jsme systém zpřesňovali a v posledním měsíci se začaly výsledky výrazněji projevovat. Za přibližně 2,5 měsíce se podařilo:</p>
+      <ul>
+        <li>investovat do reklamy pouze 7 350 Kč,</li>
+        <li>vytvořit více než 100 000 Kč zisku,</li>
+        <li>vybudovat systém, který Ále přivádí nové potenciální klientky,</li>
+        <li>vytvořit proces, který lze dále optimalizovat a škálovat.</li>
+      </ul>
+      <h4>Co bylo klíčem k výsledku</h4>
+      <p>Nešlo o nalezení nějakého „kouzelného“ nastavení reklam. Nejdůležitější bylo přesně pochopit, komu Ála pomáhá a jaký konkrétní problém chce řešit. Jakmile jsme měli jasně definovanou cílovou skupinu a problém, mohli jsme tomu přizpůsobit celou komunikaci. A následně jsme postupně optimalizovali celý proces od reklamy až po samotný prodej.</p>
+      <p>Výsledkem není pouze jednorázově povedená reklamní kampaň. Ála dnes má systém, který může dál využívat, optimalizovat a škálovat pro získávání nových platících klientek.</p>
+    </div>
+    <div class="case-modal-cta">
+      <p>Chcete podobný systém pro vaše podnikání?</p>
+      <a href="https://wa.me/420728834912?text=Dobr%C3%BD%20den%20pane%20Mrzeno%2C%20m%C3%A1m%20z%C3%A1jem%20o%20podobnou%20spolupr%C3%A1ci%20jako%20v%20p%C5%99%C3%ADpadov%C3%A9%20studii%20%C3%81ly%20%E2%80%93%20chci%20nastavit%20syst%C3%A9m%20pro%20pravideln%C3%A9%20z%C3%ADsk%C3%A1v%C3%A1n%C3%AD%20plat%C3%ADc%C3%ADch%20klientek.%20M%C5%AF%C5%BEeme%20se%20spojit%3F" target="_blank" rel="noopener" class="btn btn-primary">Odeslat poptávku</a>
+    </div>
+  </div>
+</div>
+
+<div class="case-modal-overlay" id="popkorn-modal" onclick="if(event.target===this)closeCaseModal('popkorn')">
+  <div class="case-modal">
+    <button type="button" class="case-modal-close" onclick="closeCaseModal('popkorn')" aria-label="Zavřít"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <div class="case-modal-industry">E-commerce · Domácí spotřebiče</div>
+    <h3 class="case-modal-title">Jak jsem během několika měsíců výrazně zvýšil meziroční obrat e-shopu Popkornovač.cz</h3>
+    <p class="case-modal-subtitle">Kompletní převzetí výkonnostního marketingu s důrazem na zdravou návratnost investic.</p>
+    <div class="case-modal-results" style="grid-template-columns:repeat(3,1fr)">
+      <div class="case-result">
+        <div class="case-result-val">8 měsíců</div>
+        <div class="case-result-label">Délka spolupráce</div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-val">+33,57 %</div>
+        <div class="case-result-label">Meziroční růst obratu</div>
+      </div>
+      <div class="case-result">
+        <div class="case-result-val">+17,52 %</div>
+        <div class="case-result-label">Nárůst objednávek</div>
+      </div>
+    </div>
+    <div class="case-modal-body">
+      <h4>Výchozí situace</h4>
+      <p>Majitel e-shopu hledal někoho, kdo převezme výkonnostní marketing a pomůže e-shop dál růst. Cílem nebylo pouze zvýšit návštěvnost, ale dlouhodobě zvyšovat obrat při zachování zdravé návratnosti reklamních investic.</p>
+      <h4>Jak jsem postupoval</h4>
+      <p>Nejprve jsem analyzoval dosavadní kampaně a vytipoval produkty s největším růstovým potenciálem.</p>
+      <p>Vedle optimalizace Google Ads a Sklik Ads jsem osobně připravil a natočil reklamní videa pro Meta Ads. Díky tomu vznikly kreativy, které odpovídaly cílové skupině a pomohly zvýšit výkon kampaní.</p>
+      <p>Rozpočty jsem následně soustředil na produkty, které měly nejlepší výsledky, a průběžně jsem je škáloval podle dat.</p>
+      <h4>Výsledky</h4>
+      <p>Za dobu spolupráce se podařilo dosáhnout:</p>
+      <ul>
+        <li>délka spolupráce: 8 měsíců,</li>
+        <li>meziroční růst obratu: 33,57 %,</li>
+        <li>nárůst objednávek: 17,52 %.</li>
+      </ul>
+      <h4>Co bylo klíčem k úspěchu</h4>
+      <p>Růst nevznikl pouze lepším nastavením reklam. Důležitou roli sehrála kombinace kvalitních reklamních kreativ, správného výběru produktů a průběžného škálování kampaní podle reálných výsledků.</p>
+      <h4>Vyjádření klienta</h4>
+      <p class="case-modal-quote">„Se spoluprací jsme byli velmi spokojeni. Během 8 měsíců se staral o naše kampaně na Google, Meta a Seznamu a výsledky byly znát – meziročně nám obrat e-shopu vzrostl o 33,57 % a počet objednávek o 17,52 %. Oceňujeme především jeho samostatnost, spolehlivost a zaměření na skutečné výsledky. Spolupráci můžeme bez váhání doporučit.“</p>
+      <p class="case-modal-quote-author">— Majitel e-shopu Popkornovač.cz</p>
+    </div>
+    <div class="case-modal-cta">
+      <p>Chcete podobné výsledky pro váš e-shop?</p>
+      <a href="https://wa.me/420728834912?text=Dobr%C3%BD%20den%20pane%20Mrzeno%2C%20m%C3%A1m%20z%C3%A1jem%20o%20podobn%C3%A9%20v%C3%BDsledky%20jako%20v%20p%C5%99%C3%ADpadov%C3%A9%20studii%20Popkornova%C4%8D.cz%20%E2%80%93%20chci%20zv%C3%BD%C5%A1it%20obrat%20sv%C3%A9ho%20e-shopu.%20M%C5%AF%C5%BEeme%20se%20spojit%3F" target="_blank" rel="noopener" class="btn btn-primary">Odeslat poptávku</a>
+    </div>
+  </div>
+</div>
 
 <!-- PROCESS -->
 <section id="process" class="section">
@@ -1061,6 +1193,22 @@ dots.forEach(d=>d.addEventListener('click',()=>goTo(parseInt(d.dataset.idx))));
 let autoSlide=setInterval(()=>goTo((tCurrent+1)%dots.length),5000);
 document.querySelector('.testimonials-track').addEventListener('mouseenter',()=>clearInterval(autoSlide));
 document.querySelector('.testimonials-track').addEventListener('mouseleave',()=>{autoSlide=setInterval(()=>goTo((tCurrent+1)%dots.length),5000)});
+
+// CASE STUDY MODAL
+function openCaseModal(id){
+  document.getElementById(id+'-modal').classList.add('open');
+  document.body.classList.add('modal-open');
+}
+function closeCaseModal(id){
+  document.getElementById(id+'-modal').classList.remove('open');
+  document.body.classList.remove('modal-open');
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.case-modal-overlay.open').forEach(o=>o.classList.remove('open'));
+    document.body.classList.remove('modal-open');
+  }
+});
 
 // FAQ
 function toggleFaq(btn){
