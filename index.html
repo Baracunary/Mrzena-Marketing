@@ -464,6 +464,9 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
 @media(max-width:768px){
   .section{padding:80px 0}
   .nav-links,.nav-cta .btn:not(.btn-primary){display:none}
+  .nav-cta .btn-primary{padding:8px 14px!important;font-size:12px!important;box-shadow:0 0 18px rgba(30,144,255,0.3)}
+  .nav-cta{gap:8px}
+  .nav-inner{gap:12px}
   .hamburger{display:flex}
   .services-grid{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
@@ -535,7 +538,6 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
       <a href="#ukazky">Ukázky webů</a>
       <a href="#process">Spolupráce</a>
       <a href="#about">O mně</a>
-      <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
       <a href="#contact" class="btn btn-secondary" style="padding:10px 20px;font-size:14px">Kontakt</a>
@@ -554,7 +556,6 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   <a href="#ukazky" onclick="closeMobile()">Ukázky webů</a>
   <a href="#process" onclick="closeMobile()">Spolupráce</a>
   <a href="#about" onclick="closeMobile()">O mně</a>
-  <a href="#faq" onclick="closeMobile()">FAQ</a>
   <a href="https://calendly.com/mrzenapavel33/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg" onclick="closeMobile()">Nezávazná konzultace</a>
 </div>
 
@@ -976,25 +977,7 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
         <button type="button" class="ux-open">Prohlédnout ukázku <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </article>
 
-      <article class="ux-card reveal reveal-delay-1" data-ux="hypoteka-limit">
-        <div class="ux-preview">
-          <div class="ux-browser">
-            <div class="ux-browser-bar"><i></i><i></i><i></i><span class="ux-browser-url">leadmagnet · hypoteční limit</span></div>
-            <div class="ux-screen"><img src="brand/portfolio/hypoteka-limit-desktop.webp" width="1200" height="4856" loading="lazy" decoding="async" alt="Náhled webu s kalkulačkou hypotečního limitu – desktopová verze"></div>
-          </div>
-          <div class="ux-phone"><img src="brand/portfolio/hypoteka-limit-mobile.webp" width="735" height="16383" loading="lazy" decoding="async" alt="Náhled webu s kalkulačkou hypotečního limitu – mobilní verze"></div>
-        </div>
-        <div class="case-industry">Hypoteční poradkyně · Brno</div>
-        <h3 class="ux-title">Kalkulačka hypotečního limitu</h3>
-        <p class="ux-desc">Šestikroková kalkulačka ukáže orientační limit hned a přesný propočet poradkyně posílá jako kvalifikovanou poptávku.</p>
-        <div class="service-tags">
-          <span class="service-tag">Vícekrokový formulář</span>
-          <span class="service-tag">Kvalifikace leadu</span>
-        </div>
-        <button type="button" class="ux-open">Prohlédnout ukázku <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </article>
-
-      <article class="ux-card reveal" data-ux="sprava-nemovitosti">
+      <article class="ux-card reveal reveal-delay-1" data-ux="sprava-nemovitosti">
         <div class="ux-preview">
           <div class="ux-browser">
             <div class="ux-browser-bar"><i></i><i></i><i></i><span class="ux-browser-url">web · správa nemovitostí</span></div>
@@ -1009,6 +992,24 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
           <span class="service-tag">Segmentace</span>
           <span class="service-tag">Lead formuláře</span>
           <span class="service-tag">Kalkulačka nájmu</span>
+        </div>
+        <button type="button" class="ux-open">Prohlédnout ukázku <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </article>
+
+      <article class="ux-card reveal" data-ux="hypoteka-limit">
+        <div class="ux-preview">
+          <div class="ux-browser">
+            <div class="ux-browser-bar"><i></i><i></i><i></i><span class="ux-browser-url">leadmagnet · hypoteční limit</span></div>
+            <div class="ux-screen"><img src="brand/portfolio/hypoteka-limit-desktop.webp" width="1200" height="4856" loading="lazy" decoding="async" alt="Náhled webu s kalkulačkou hypotečního limitu – desktopová verze"></div>
+          </div>
+          <div class="ux-phone"><img src="brand/portfolio/hypoteka-limit-mobile.webp" width="735" height="16383" loading="lazy" decoding="async" alt="Náhled webu s kalkulačkou hypotečního limitu – mobilní verze"></div>
+        </div>
+        <div class="case-industry">Hypoteční poradkyně · Brno</div>
+        <h3 class="ux-title">Kalkulačka hypotečního limitu</h3>
+        <p class="ux-desc">Šestikroková kalkulačka ukáže orientační limit hned a přesný propočet poradkyně posílá jako kvalifikovanou poptávku.</p>
+        <div class="service-tags">
+          <span class="service-tag">Vícekrokový formulář</span>
+          <span class="service-tag">Kvalifikace leadu</span>
         </div>
         <button type="button" class="ux-open">Prohlédnout ukázku <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </article>
@@ -1035,7 +1036,7 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
     </div>
     <div class="ux-cta glass reveal">
       <h3>Chcete web, který vám přivádí poptávky místo návštěv?</h3>
-      <a href="https://calendly.com/mrzenapavel33/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Domluvit konzultaci</a>
+      <a href="https://wa.me/420728834912?text=Dobr%C3%BD%20den%20pane%20Mrzeno%2C%20m%C3%A1m%20z%C3%A1jem%20o%20web.%20M%C5%AF%C5%BEeme%20se%20spojit%3F" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Mám zájem o web</a>
     </div>
   </div>
 </section>
