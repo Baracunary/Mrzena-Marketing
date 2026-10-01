@@ -549,7 +549,8 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   .system-node{margin:0}
   .system-body{padding-top:4px}
   .system-desc{font-size:14px}
-  .case-card{grid-template-columns:1fr}
+  .case-card{grid-template-columns:minmax(0,1fr)}
+  .case-info,.case-visual{min-width:0}
 }
 @media(max-width:768px){
   .section{padding:80px 0}
@@ -573,7 +574,22 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   .footer-top{flex-direction:column;align-items:flex-start}
   .about-values{grid-template-columns:1fr}
   .case-results{grid-template-columns:1fr 1fr}
-  .case-result-val{font-size:clamp(19px,5.6vw,24px);white-space:nowrap}
+  .case-result-val{font-size:clamp(18px,5.2vw,22px);white-space:nowrap}
+  .cases-grid{gap:20px}
+  .case-card{padding:28px 20px;gap:24px;border-radius:24px}
+  .case-title{font-size:23px;margin-bottom:18px}
+  .case-steps{gap:12px;margin-bottom:20px;padding:16px;background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-radius:14px}
+  .case-steps dd{font-size:14px}
+  .case-results{gap:10px;margin-bottom:20px}
+  .case-result{padding:14px 12px}
+  .case-result-label{font-size:11px}
+  .case-info>.btn{width:100%;justify-content:center}
+  .case-visual.case-funnel{padding:20px 16px;gap:16px;border-radius:18px}
+  .case-funnel-steps li{font-size:13px;padding:10px 12px 10px 34px}
+  .case-funnel-steps li::before{left:12px}
+  .case-funnel-steps li+li{margin-top:18px}
+  .case-funnel-steps li+li::after{top:-16px}
+  .case-logo-row{flex-wrap:wrap}
   .problem-header .section-title{max-width:340px;margin-left:auto;margin-right:auto}
   .case-modal{padding:32px 24px}
   .ux-grid{grid-template-columns:1fr}
@@ -675,7 +691,7 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
         Ne jen více kliknutí.
       </h1>
       <p class="hero-sub">Stavím firmám systém pro získávání nových zákazníků. Od nabídky a reklam přes landing page nebo kalkulačku až po kvalifikovanou poptávku a konzultaci.</p>
-      <p class="hero-fit">Největší smysl to dává tam, kde jeden nový zákazník stojí za <strong>desítky až stovky tisíc korun</strong>.</p>
+      <p class="hero-fit">Největší smysl to dává tam, kde vám jeden nový zákazník dokáže přinést <strong>tržby v řádu desítek až stovek tisíc korun</strong>.</p>
       <div class="hero-btns">
         <a href="https://calendly.com/mrzenapavel33/30min" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
@@ -780,7 +796,7 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   <div class="container">
     <div class="fit-header">
       <div class="section-label reveal">Pro koho</div>
-      <h2 class="section-title reveal reveal-delay-1">Největší smysl to dává firmám, kde jeden nový zákazník stojí za <span class="grad">desítky až stovky tisíc korun</span></h2>
+      <h2 class="section-title reveal reveal-delay-1">Největší smysl to dává firmám, kterým jeden nový zákazník dokáže přinést <span class="grad">tržby v řádu desítek až stovek tisíc korun</span></h2>
       <p class="section-sub reveal reveal-delay-2">Když má jedna zakázka takovou hodnotu, nerozhoduje počet kliknutí. Rozhoduje, kolik relevantních poptávek se promění v obchod.</p>
     </div>
     <div class="fit-grid">
