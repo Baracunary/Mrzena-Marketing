@@ -145,8 +145,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:al
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:72px}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-canvas{position:absolute;inset:0;width:100%;height:100%}
-.hero-glow-1{position:absolute;top:-20%;left:-10%;width:70%;height:70%;background:radial-gradient(circle,rgba(30,144,255,0.12) 0%,transparent 70%);pointer-events:none}
-.hero-glow-2{position:absolute;bottom:-20%;right:-10%;width:60%;height:60%;background:radial-gradient(circle,rgba(0,180,219,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-glow-1{position:absolute;top:-20%;left:-10%;width:70%;height:70%;background:radial-gradient(closest-side,rgba(30,144,255,0.12) 0%,rgba(30,144,255,0.05) 55%,transparent 100%);pointer-events:none}
+.hero-glow-2{position:absolute;bottom:-20%;right:-10%;width:60%;height:60%;background:radial-gradient(closest-side,rgba(0,180,219,0.08) 0%,rgba(0,180,219,0.03) 55%,transparent 100%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(30,144,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(30,144,255,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%)}
 .hero-content{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .hero-eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:28px}
@@ -257,17 +257,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:al
 .system-note p strong{color:var(--white)}
 
 /* SERVICES – role v systému */
-.service-card-premium{border-color:rgba(255,122,0,0.35);background:linear-gradient(160deg,rgba(255,122,0,0.07),transparent 45%),var(--surface2);display:flex;flex-direction:column}
-.service-card-premium:hover{border-color:rgba(255,122,0,0.55)}
-.service-premium{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;margin:-4px 0 12px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange);background:rgba(255,122,0,0.1);border:1px solid rgba(255,122,0,0.35);border-radius:50px;padding:3px 10px}
+.service-premium{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;margin:0;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange);background:rgba(255,122,0,0.1);border:1px solid rgba(255,122,0,0.35);border-radius:50px;padding:3px 10px}
 .service-premium::before{content:'★';font-size:10px}
-.service-card-link{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--blue);transition:gap 0.2s}
-.service-card-link::after{content:'';position:absolute;inset:0;border-radius:var(--radius-lg);z-index:1}
-.service-card-link:focus-visible{outline:none}
-.service-card-premium:has(.service-card-link:focus-visible){outline:2px solid var(--blue);outline-offset:3px}
-.service-card-premium:hover .service-card-link{gap:12px}
-.service-card-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.service-card-premium{cursor:pointer}
 /* CASES – důkazy */
 .case-steps{display:flex;flex-direction:column;gap:14px;margin-bottom:24px}
 .case-steps dt{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-bottom:3px}
@@ -282,23 +273,43 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;transition:al
 .case-funnel-steps li.is-final::before{background:#fff;box-shadow:none}
 .about-claim{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.6vw,28px);font-weight:700;line-height:1.3;margin-bottom:24px;padding-left:18px;border-left:3px solid var(--blue)}
 .contact-title-long{font-size:clamp(30px,4.4vw,52px);line-height:1.12}
-.service-role{font-size:14px;font-weight:600;color:var(--blue);margin:-4px 0 12px;line-height:1.5}
 
 /* SERVICES */
 #services{background:linear-gradient(180deg,var(--navy) 0%,var(--surface) 50%,var(--navy) 100%)}
 .services-header{text-align:center;margin-bottom:72px}
 .services-header .section-sub{margin:0 auto}
-.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.service-card{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:30px 26px;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;cursor:default}
-.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(30,144,255,0.08),transparent 60%);opacity:0;transition:opacity 0.4s;pointer-events:none}
-.service-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
-.service-card:hover::before{opacity:1}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1040px;margin:0 auto;align-items:start}
+.svc{background:var(--surface2);border:1px solid var(--border2);border-radius:20px;transition:border-color 0.3s,box-shadow 0.3s}
+.svc:hover,.svc.open{border-color:var(--border);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
+.svc-head{width:100%;display:grid;grid-template-columns:44px 1fr 28px;gap:14px;align-items:center;padding:18px 18px 18px 20px;background:none;color:var(--text);text-align:left;border-radius:20px}
+.svc-head:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.svc .service-icon{width:44px;height:44px;margin:0;border-radius:12px}
+.svc .service-icon svg{width:20px;height:20px}
+.svc-text{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
+.svc-name{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;line-height:1.3;transition:color 0.3s}
+.svc:hover .svc-name,.svc.open .svc-name{color:var(--blue)}
+.svc-role{font-size:13px;color:var(--text2);line-height:1.5}
+.svc-toggle{position:relative;width:28px;height:28px;border-radius:50%;background:rgba(30,144,255,0.1);border:1px solid rgba(30,144,255,0.2);transition:all 0.3s}
+.svc-toggle::before,.svc-toggle::after{content:'';position:absolute;left:50%;top:50%;width:10px;height:2px;margin:-1px 0 0 -5px;background:var(--blue);border-radius:2px;transition:transform 0.3s}
+.svc-toggle::after{transform:rotate(90deg)}
+.svc.open .svc-toggle{background:var(--blue);border-color:var(--blue)}
+.svc.open .svc-toggle::before,.svc.open .svc-toggle::after{background:#fff}
+.svc.open .svc-toggle::after{transform:rotate(0deg)}
+.svc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.35s cubic-bezier(0.4,0,0.2,1)}
+.svc.open .svc-body{grid-template-rows:1fr}
+.svc-inner{overflow:hidden;padding:0 20px}
+.svc.open .svc-inner{padding-bottom:20px}
+.svc-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;padding-top:2px}
+.svc-premium{border-color:rgba(255,122,0,0.35);background:linear-gradient(160deg,rgba(255,122,0,0.07),transparent 50%),var(--surface2)}
+.svc-premium:hover,.svc-premium.open{border-color:rgba(255,122,0,0.55)}
+.svc-premium .service-premium{margin:0}
+.svc-link{display:flex;align-items:center;gap:8px;margin:0 20px 18px 78px;font-size:13px;font-weight:600;color:var(--blue);transition:gap 0.2s}
+.svc-link:hover{gap:12px}
+.svc-link svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc-hint{text-align:center;font-size:13px;color:var(--text3);margin-top:20px}
+@media(prefers-reduced-motion:reduce){.svc-body,.svc-toggle,.svc-toggle::before,.svc-toggle::after{transition:none}}
 .service-icon{width:52px;height:52px;background:rgba(30,144,255,0.1);border:1px solid rgba(30,144,255,0.2);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:all 0.3s}
-.service-card:hover .service-icon{background:rgba(30,144,255,0.2);border-color:rgba(30,144,255,0.4)}
 .service-icon svg{width:24px;height:24px;stroke:var(--blue);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.service-name{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;transition:color 0.3s}
-.service-card:hover .service-name{color:var(--blue)}
-.service-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:24px}
 .service-tags{display:flex;flex-wrap:wrap;gap:8px}
 .service-tag{font-size:11px;font-weight:600;padding:4px 10px;background:rgba(30,144,255,0.08);border:1px solid rgba(30,144,255,0.15);border-radius:50px;color:var(--blue)}
 
@@ -537,7 +548,7 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   .hero-visual{display:none}
   .hero-mobile-kpis{display:block}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
-  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr);max-width:720px}
   .about-grid{grid-template-columns:1fr;gap:48px}
   .about-portrait{max-width:400px;margin:0 auto}
   .faq-grid{grid-template-columns:1fr}
@@ -559,7 +570,10 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   .nav-cta{gap:8px}
   .nav-inner{gap:12px}
   .hamburger{display:flex}
-  .services-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr;max-width:520px}
+  .svc-head{padding:16px;gap:12px}
+  .svc-inner{padding:0 16px}
+  .svc-link{margin:0 16px 16px 72px}
   .fit-grid{grid-template-columns:1fr}
   .fit-header,.problem-header,.system-header{margin-bottom:44px}
   .problem-col{padding:28px 22px}
@@ -612,6 +626,8 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   .case-modal-cta{flex-direction:column;align-items:stretch;text-align:center}
   .case-modal-cta p{max-width:100%}
   .hero-trust{flex-direction:column;align-items:center;justify-content:center;width:100%;text-align:center;gap:14px;margin-top:32px;padding-top:32px}
+  .hero-glow-1{width:140%;left:-40%;height:60%}
+  .hero-glow-2{width:140%;right:-40%;height:50%}
   .hero-trust-avatars{display:flex;justify-content:center;width:100%}
   .hero-trust-avatars span{width:40px;height:40px;font-size:14px}
   .hero-trust-text{font-size:15px;text-align:center;width:100%}
@@ -935,108 +951,138 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
     </div>
     <div class="services-grid">
 
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10l6-6 6 6v10M10 20v-5h4v5"/></svg>
-        </div>
-        <div class="service-name">Strategie a nabídka</div>
-        <p class="service-role">Určí, komu a s čím jdeme ven.</p>
-        <p class="service-desc">Cílová skupina, hodnota nového zákazníka a nabídka, která dává důvod ozvat se. Základ, na kterém stojí všechno ostatní.</p>
-        <div class="service-tags">
-          <span class="service-tag">Positioning</span>
-          <span class="service-tag">Nabídka</span>
-          <span class="service-tag">Hodnota zákazníka</span>
-        </div>
-      </div>
-
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <div class="service-name">Meta Ads</div>
-        <p class="service-role">Přivedou relevantní lidi do systému.</p>
-        <p class="service-desc">Kampaně na Facebooku a Instagramu, které oslovují lidi podle toho, co řeší. Včetně kreativ, testování a retargetingu.</p>
-        <div class="service-tags">
-          <span class="service-tag">Facebook</span>
-          <span class="service-tag">Instagram</span>
-          <span class="service-tag">Retargeting</span>
+      <div class="svc reveal">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="svc-1">
+          <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10l6-6 6 6v10M10 20v-5h4v5"/></svg></span>
+          <span class="svc-text">
+            <span class="svc-name">Strategie a nabídka</span>
+            <span class="svc-role">Určí, komu a s čím jdeme ven.</span>
+          </span>
+          <span class="svc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="svc-body" id="svc-1">
+          <div class="svc-inner">
+            <p class="svc-desc">Cílová skupina, hodnota nového zákazníka a nabídka, která dává důvod ozvat se. Základ, na kterém stojí všechno ostatní.</p>
+            <div class="service-tags">
+              <span class="service-tag">Positioning</span>
+              <span class="service-tag">Nabídka</span>
+              <span class="service-tag">Hodnota zákazníka</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-        </div>
-        <div class="service-name">Google Ads</div>
-        <p class="service-role">Zachytí lidi, kteří řešení už aktivně hledají.</p>
-        <p class="service-desc">Vyhledávání, Performance Max a další formáty zaměřené na dotazy s nákupním záměrem, ne na objem návštěv.</p>
-        <div class="service-tags">
-          <span class="service-tag">Search</span>
-          <span class="service-tag">Performance Max</span>
-          <span class="service-tag">Shopping</span>
-        </div>
-      </div>
-
-      <div class="service-card service-card-premium reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M7 8h4M7 12h10"/></svg>
-        </div>
-        <div class="service-name">Leadmagnet weby a funnely</div>
-        <span class="service-premium">Premium služba</span>
-        <p class="service-role">Proměňují návštěvníky v kvalifikované poptávky.</p>
-        <p class="service-desc">Weby a funnely s kalkulačkou nebo chytrým formulářem, které návštěvníkovi dají okamžitou hodnotu a vám předají kvalifikovaný kontakt. Napojené na Meta a Google Ads.</p>
-        <div class="service-tags">
-          <span class="service-tag">Funnel</span>
-          <span class="service-tag">Kalkulačky</span>
-          <span class="service-tag">Lead formuláře</span>
-          <span class="service-tag">Napojení na reklamy</span>
-        </div>
-        <a href="#ukazky" class="service-card-link">Zobrazit ukázky webů <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M12 10h2M16 10h0M8 14h2M12 14h2M8 18h2M12 18h4M16 14v4"/></svg>
-        </div>
-        <div class="service-name">Kalkulačky a lead magnety</div>
-        <p class="service-role">Dají návštěvníkovi hodnotu hned a vám kontakt.</p>
-        <p class="service-desc">Kalkulačky ceny, splátky nebo úspory a chytré formuláře, které zároveň zjistí, s kým máte tu čest.</p>
-        <div class="service-tags">
-          <span class="service-tag">Kalkulace ceny</span>
-          <span class="service-tag">Chytré formuláře</span>
-          <span class="service-tag">Lead magnety</span>
+      <div class="svc reveal reveal-delay-1">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="svc-2">
+          <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+          <span class="svc-text">
+            <span class="svc-name">Meta Ads</span>
+            <span class="svc-role">Přivedou relevantní lidi do systému.</span>
+          </span>
+          <span class="svc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="svc-body" id="svc-2">
+          <div class="svc-inner">
+            <p class="svc-desc">Kampaně na Facebooku a Instagramu, které oslovují lidi podle toho, co řeší. Včetně kreativ, testování a retargetingu.</p>
+            <div class="service-tags">
+              <span class="service-tag">Facebook</span>
+              <span class="service-tag">Instagram</span>
+              <span class="service-tag">Retargeting</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        </div>
-        <div class="service-name">Tracking a měření</div>
-        <p class="service-role">Ukáže, co skutečně přináší zakázky.</p>
-        <p class="service-desc">GA4, Meta Pixel, server-side tracking a reporting, který sleduje poptávky a obchody, ne jen kliknutí.</p>
-        <div class="service-tags">
-          <span class="service-tag">GA4</span>
-          <span class="service-tag">GTM</span>
-          <span class="service-tag">Looker Studio</span>
+      <div class="svc reveal reveal-delay-2">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="svc-3">
+          <span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></span>
+          <span class="svc-text">
+            <span class="svc-name">Google Ads</span>
+            <span class="svc-role">Zachytí lidi, kteří řešení už aktivně hledají.</span>
+          </span>
+          <span class="svc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="svc-body" id="svc-3">
+          <div class="svc-inner">
+            <p class="svc-desc">Vyhledávání, Performance Max a další formáty zaměřené na dotazy s nákupním záměrem, ne na objem návštěv.</p>
+            <div class="service-tags">
+              <span class="service-tag">Search</span>
+              <span class="service-tag">Performance Max</span>
+              <span class="service-tag">Shopping</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <div class="svc svc-premium reveal">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="svc-4">
+          <span class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M7 8h4M7 12h10"/></svg></span>
+          <span class="svc-text">
+            <span class="svc-name">Leadmagnet weby a funnely</span>
+            <span class="service-premium">Premium služba</span>
+            <span class="svc-role">Proměňují návštěvníky v kvalifikované poptávky.</span>
+          </span>
+          <span class="svc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="svc-body" id="svc-4">
+          <div class="svc-inner">
+            <p class="svc-desc">Weby a funnely s kalkulačkou ceny, splátky nebo úspory a chytrým formulářem. Návštěvník dostane okamžitou hodnotu a vy kvalifikovaný kontakt. Napojené na Meta a Google Ads.</p>
+            <div class="service-tags">
+              <span class="service-tag">Funnel</span>
+              <span class="service-tag">Kalkulačky</span>
+              <span class="service-tag">Chytré formuláře</span>
+              <span class="service-tag">Lead magnety</span>
+              <span class="service-tag">Napojení na reklamy</span>
+            </div>
+          </div>
         </div>
-        <div class="service-name">Automatizace a kvalifikace leadů</div>
-        <p class="service-role">Oddělí relevantní poptávky od zvědavců.</p>
-        <p class="service-desc">Kvalifikační otázky, automatické odpovědi, e-mailové sekvence a napojení na CRM, aby se žádná dobrá poptávka neztratila.</p>
-        <div class="service-tags">
-          <span class="service-tag">Kvalifikace</span>
-          <span class="service-tag">E-mail flows</span>
-          <span class="service-tag">CRM integrace</span>
+        <a href="#ukazky" class="svc-link">Zobrazit ukázky webů <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="svc reveal reveal-delay-1">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="svc-5">
+          <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
+          <span class="svc-text">
+            <span class="svc-name">Tracking a měření</span>
+            <span class="svc-role">Ukáže, co skutečně přináší zakázky.</span>
+          </span>
+          <span class="svc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="svc-body" id="svc-5">
+          <div class="svc-inner">
+            <p class="svc-desc">GA4, Meta Pixel, server-side tracking a reporting, který sleduje poptávky a obchody, ne jen kliknutí.</p>
+            <div class="service-tags">
+              <span class="service-tag">GA4</span>
+              <span class="service-tag">GTM</span>
+              <span class="service-tag">Looker Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="svc reveal reveal-delay-2">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="svc-6">
+          <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+          <span class="svc-text">
+            <span class="svc-name">Automatizace a kvalifikace leadů</span>
+            <span class="svc-role">Oddělí relevantní poptávky od zvědavců.</span>
+          </span>
+          <span class="svc-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="svc-body" id="svc-6">
+          <div class="svc-inner">
+            <p class="svc-desc">Kvalifikační otázky, automatické odpovědi, e-mailové sekvence a napojení na CRM, aby se žádná dobrá poptávka neztratila.</p>
+            <div class="service-tags">
+              <span class="service-tag">Kvalifikace</span>
+              <span class="service-tag">E-mail flows</span>
+              <span class="service-tag">CRM integrace</span>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
+    <p class="svc-hint reveal">Kliknutím na nástroj zobrazíte podrobnosti.</p>
   </div>
 </section>
 
@@ -1865,6 +1911,13 @@ document.addEventListener('keydown',e=>{
     document.body.classList.remove('modal-open');
   }
 });
+
+// SLUŽBY – ROZBALOVACÍ KARTY
+document.querySelectorAll('.svc-head').forEach(btn=>btn.addEventListener('click',()=>{
+  const open=btn.getAttribute('aria-expanded')!=='true';
+  btn.setAttribute('aria-expanded',String(open));
+  btn.closest('.svc').classList.toggle('open',open);
+}));
 
 // UKÁZKY WEBŮ – DALŠÍ UKÁZKY
 const UX_STEP=2;
