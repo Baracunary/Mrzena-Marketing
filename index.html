@@ -18,6 +18,12 @@
 <meta name="twitter:description" content="Pomáhám firmám růst profitabilně díky výkonnostnímu marketingu. Meta Ads, Google Ads, analytika.">
 <meta name="twitter:image" content="https://www.mrzenamarketing.cz/brand/851D6031-4F1F-4AF3-AF4A-7074C30A517A.PNG">
 <link rel="canonical" href="https://www.mrzenamarketing.cz">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#080E1A">
 <title>MRZENA Marketing – Data. Strategie. Růst.</title>
 <script type="application/ld+json">
 {
@@ -25,6 +31,7 @@
   "@type": "ProfessionalService",
   "name": "MRZENA Marketing",
   "url": "https://www.mrzenamarketing.cz",
+  "logo": "https://www.mrzenamarketing.cz/icon-512.png",
   "image": "https://www.mrzenamarketing.cz/brand/851D6031-4F1F-4AF3-AF4A-7074C30A517A.PNG",
   "email": "pavel@mrzenamarketing.cz",
   "telephone": "+420728834912",
@@ -299,16 +306,30 @@ body.modal-open{overflow:hidden}
 #testimonials{background:linear-gradient(180deg,var(--navy) 0%,var(--surface) 100%)}
 .testimonials-header{text-align:center;margin-bottom:64px}
 .testimonials-track{overflow:hidden;position:relative}
-.testimonials-slides{display:flex;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+.testimonials-track.reveal{transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1),height 0.4s cubic-bezier(0.4,0,0.2,1)}
+.testimonials-slides{display:flex;align-items:flex-start;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
 .testimonial-slide{min-width:100%;padding:0 24px}
 .testimonial-card{max-width:800px;margin:0 auto;background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-xl);padding:56px;position:relative}
-.testimonial-card::before{content:'\201C';position:absolute;top:24px;left:40px;font-size:120px;font-family:'Space Grotesk',sans-serif;color:rgba(30,144,255,0.1);line-height:1}
-.testimonial-text{font-size:clamp(18px,2.5vw,22px);line-height:1.65;color:var(--text);margin-bottom:40px;position:relative;z-index:1}
-.testimonial-author{display:flex;align-items:center;gap:16px}
+.testimonial-card::before{content:'\201C';position:absolute;top:-6px;left:36px;font-size:110px;font-family:'Space Grotesk',sans-serif;color:rgba(30,144,255,0.1);line-height:1}
+.testimonial-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;margin-bottom:20px;position:relative;z-index:1}
+.testimonial-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--teal);background:rgba(0,180,219,0.08);border:1px solid rgba(0,180,219,0.25);border-radius:999px;padding:4px 10px}
+.testimonial-badge svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.testimonial-text{font-size:clamp(17px,2.5vw,22px);line-height:1.65;color:var(--text);margin-bottom:40px;position:relative;z-index:1;overflow-wrap:break-word}
+.testimonial-author{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
 .author-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--blue-mid),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
 .author-name{font-weight:700;font-size:15px;margin-bottom:2px}
 .author-company{font-size:13px;color:var(--text2)}
-.testimonial-stars{margin-left:auto;color:var(--orange);font-size:16px;letter-spacing:2px}
+.testimonial-stars{color:var(--orange);font-size:16px;letter-spacing:2px;white-space:nowrap;line-height:1}
+.testimonial-proof{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:transparent;border:1px solid var(--border2);color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.testimonial-proof:hover{border-color:var(--blue);color:var(--blue)}
+.testimonial-proof svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.proof-modal{background:var(--surface2);border:1px solid var(--border2);border-radius:20px;max-width:900px;width:100%;max-height:88vh;overflow-y:auto;padding:48px 24px 24px;position:relative;transform:translateY(24px) scale(0.98);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1)}
+.case-modal-overlay.open .proof-modal{transform:translateY(0) scale(1)}
+.proof-modal-label{font-size:13px;color:var(--text2);margin-bottom:16px;padding-right:48px}
+.proof-modal-imgs{display:flex;flex-direction:column;gap:16px}
+.proof-modal-imgs img{width:100%;height:auto;border-radius:12px;background:#fff;display:block}
+.proof-modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.proof-modal-close:hover{border-color:var(--blue);color:var(--blue)}
 .testimonials-nav{display:flex;justify-content:center;gap:12px;margin-top:40px}
 .t-dot{width:8px;height:8px;border-radius:50%;background:var(--text3);cursor:pointer;transition:all 0.3s;border:none}
 .t-dot.active{background:var(--blue);width:24px;border-radius:4px}
@@ -388,6 +409,11 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
   .about-values{grid-template-columns:1fr}
   .case-results{grid-template-columns:1fr 1fr}
   .case-modal{padding:32px 24px}
+  .testimonial-slide{padding:0 4px}
+  .testimonial-card{padding:40px 22px 28px;border-radius:24px}
+  .testimonial-card::before{top:-4px;left:14px;font-size:72px}
+  .testimonial-text{margin-bottom:28px}
+  .testimonial-proof{margin-left:0;width:100%;justify-content:center}
   .case-modal-title{max-width:100%}
   .case-modal-cta{flex-direction:column;align-items:stretch;text-align:center}
   .case-modal-cta p{max-width:100%}
@@ -931,6 +957,9 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
       <div class="testimonials-slides" id="tSlides">
         <div class="testimonial-slide">
           <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+            </div>
             <p class="testimonial-text">"Spolupráce s reklamní agenturou Viva Marketing a konkrétně s panem Pavlem Mrzenou je pro nás obrovským přínosem. Pavel se stará o naše reklamy a propagaci e-shopu jak na internetu, tak na sociálních sítích, a výsledky jsou vidět téměř okamžitě.<br><br>Velmi si ceníme jeho profesionálního přístupu, ochoty vše srozumitelně vysvětlit a rychle reagovat na naše požadavky. Díky jeho kreativním nápadům a dobře nastaveným kampaním se nám podařilo výrazně zvýšit návštěvnost e-shopu a oslovit nové zákazníky.<br><br>Je vidět, že svou práci dělá s nadšením a zkušenostmi, což se odráží na kvalitě a efektivitě naší propagace. Pavla můžeme s čistým svědomím doporučit každému, kdo hledá spolehlivého a schopného specialistu na online marketing."</p>
             <div class="testimonial-author">
               <div class="author-avatar">MK</div>
@@ -938,12 +967,48 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
                 <div class="author-name">Michal Koláček</div>
                 <div class="author-company">CEO, Popkornovač</div>
               </div>
-              <div class="testimonial-stars">★★★★★</div>
             </div>
           </div>
         </div>
         <div class="testimonial-slide">
           <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+              <span class="testimonial-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Skutečná zpráva od klientky</span>
+            </div>
+            <p class="testimonial-text">"Tak jsem včera spustila a takový úspěch jsem nečekala :) Za prvních 24 hodin má stránka přes 260 návštěv, mám 88 kontaktů a domluvených 10 schůzek. Takže moc díky za podporu, práce se vyplatila.<br><br>Díky za cenné rady, bez tebe bych sem nedošla :)"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">PK</div>
+              <div>
+                <div class="author-name">Pavla Krupková</div>
+                <div class="author-company">Klientka, prodejní funnel</div>
+              </div>
+              <button class="testimonial-proof" data-proof="brand/reviews/krupkova-1.png,brand/reviews/krupkova-2.png" data-proof-label="Pavla Krupková – původní zprávy z naší komunity"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Zobrazit originál</button>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+              <span class="testimonial-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Skutečná zpráva od klienta</span>
+            </div>
+            <p class="testimonial-text">"Mám dobrou zprávu: dnes jsem měl už první prodej z funnelu – prodal jsem program CEO Mindset Reset za 39 000 Kč na 90 dní. A ještě než byl funnel hotový, jsem stejný program v PDF prodal v červnu za 19 000 Kč. Takže naše spolupráce začíná přinášet ovoce. Děkuji."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">NL</div>
+              <div>
+                <div class="author-name">Nick Lica</div>
+                <div class="author-company">Klient, prodejní funnel</div>
+              </div>
+              <button class="testimonial-proof" data-proof="brand/reviews/lica.png" data-proof-label="Nick Lica – původní zpráva z naší komunity"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Zobrazit originál</button>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+            </div>
             <p class="testimonial-text">"Vynikající spolupráce založená na týdenních reportech. Zákazník má přehled, co se provádí za změny a může tak rychle reagovat na případné úpravy kampaní. Velké díky patří panu Mrzenovi za vstřícnost 👍"</p>
             <div class="testimonial-author">
               <div class="author-avatar">HZ</div>
@@ -951,22 +1016,61 @@ footer{background:var(--navy);border-top:1px solid var(--border2);padding:48px 2
                 <div class="author-name">Honza Zuzaník</div>
                 <div class="author-company">CEO, Autosamolepky</div>
               </div>
-              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+              <span class="testimonial-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Skutečná zpráva od klienta</span>
+            </div>
+            <p class="testimonial-text">"Tak urobili sme dobrú zmenu, za týždeň desať kontaktov, čo som vôbec nečakal. Urobili sme dobrú prácu, ďakujem za tvoju pomoc."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MM</div>
+              <div>
+                <div class="author-name">Martin Murcko</div>
+                <div class="author-company">Klient, prodejní funnel</div>
+              </div>
+              <button class="testimonial-proof" data-proof="brand/reviews/murcko.png" data-proof-label="Martin Murcko – původní zpráva z naší komunity"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Zobrazit originál</button>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+              <span class="testimonial-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Skutečná zpráva od klientky</span>
+            </div>
+            <p class="testimonial-text">"Teď jsem spustila druhou vlnu reklam, tak pomalu nabírám kontakty. Já jsem za naši spolupráci nesmírně vděčná, dostalo mě to zase o další level dál. Rozhodně hodlám funnel nadále používat."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MP</div>
+              <div>
+                <div class="author-name">Michaela Polcarová</div>
+                <div class="author-company">Klientka, prodejní funnel</div>
+              </div>
+              <button class="testimonial-proof" data-proof="brand/reviews/polcarova.png" data-proof-label="Michaela Polcarová – původní zpráva z naší komunity"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>Zobrazit originál</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="testimonials-nav" id="tNav">
-      <button class="t-dot active" data-idx="0"></button>
-      <button class="t-dot" data-idx="1"></button>
-    </div>
+    <div class="testimonials-nav" id="tNav"></div>
     <div class="testimonials-arrows">
       <button class="t-arrow" id="tPrev"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
       <button class="t-arrow" id="tNext"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
   </div>
 </section>
+
+<!-- REVIEW PROOF LIGHTBOX -->
+<div class="case-modal-overlay" id="proofModal" role="dialog" aria-modal="true" aria-label="Původní zpráva od klienta">
+  <div class="proof-modal">
+    <button class="proof-modal-close" id="proofClose" aria-label="Zavřít">&times;</button>
+    <div class="proof-modal-label" id="proofLabel"></div>
+    <div class="proof-modal-imgs" id="proofImgs"></div>
+  </div>
+</div>
 
 <!-- FAQ -->
 <section id="faq" class="section">
@@ -1198,18 +1302,58 @@ document.querySelectorAll('#trust').forEach(el=>countObs.observe(el));
 // TESTIMONIALS SLIDER
 let tCurrent=0;
 const slides=document.getElementById('tSlides');
-const dots=document.querySelectorAll('.t-dot');
+const tTrack=document.querySelector('.testimonials-track');
+const tSlideEls=slides.querySelectorAll('.testimonial-slide');
+const tNav=document.getElementById('tNav');
+tSlideEls.forEach((_,i)=>{
+  const b=document.createElement('button');
+  b.className='t-dot'+(i===0?' active':'');
+  b.dataset.idx=i;
+  b.setAttribute('aria-label','Recenze '+(i+1));
+  tNav.appendChild(b);
+});
+const dots=tNav.querySelectorAll('.t-dot');
+function fitTrack(){tTrack.style.height=tSlideEls[tCurrent].offsetHeight+'px'}
 function goTo(idx){
-  tCurrent=Math.max(0,Math.min(idx,dots.length-1));
+  const n=tSlideEls.length;
+  tCurrent=(idx+n)%n;
   slides.style.transform=`translateX(-${tCurrent*100}%)`;
   dots.forEach((d,i)=>d.classList.toggle('active',i===tCurrent));
+  fitTrack();
 }
-document.getElementById('tPrev').addEventListener('click',()=>goTo(tCurrent-1));
-document.getElementById('tNext').addEventListener('click',()=>goTo(tCurrent+1));
-dots.forEach(d=>d.addEventListener('click',()=>goTo(parseInt(d.dataset.idx))));
-let autoSlide=setInterval(()=>goTo((tCurrent+1)%dots.length),5000);
-document.querySelector('.testimonials-track').addEventListener('mouseenter',()=>clearInterval(autoSlide));
-document.querySelector('.testimonials-track').addEventListener('mouseleave',()=>{autoSlide=setInterval(()=>goTo((tCurrent+1)%dots.length),5000)});
+window.addEventListener('resize',fitTrack);
+window.addEventListener('load',fitTrack);
+fitTrack();
+let autoSlide=null;
+function startAuto(){stopAuto();autoSlide=setInterval(()=>goTo(tCurrent+1),7000)}
+function stopAuto(){clearInterval(autoSlide)}
+document.getElementById('tPrev').addEventListener('click',()=>{goTo(tCurrent-1);startAuto()});
+document.getElementById('tNext').addEventListener('click',()=>{goTo(tCurrent+1);startAuto()});
+dots.forEach(d=>d.addEventListener('click',()=>{goTo(parseInt(d.dataset.idx));startAuto()}));
+startAuto();
+tTrack.addEventListener('mouseenter',stopAuto);
+tTrack.addEventListener('mouseleave',startAuto);
+let tTouchX=null;
+tTrack.addEventListener('touchstart',e=>{tTouchX=e.touches[0].clientX;stopAuto()},{passive:true});
+tTrack.addEventListener('touchend',e=>{
+  if(tTouchX===null)return;
+  const dx=e.changedTouches[0].clientX-tTouchX;
+  if(Math.abs(dx)>50)goTo(tCurrent+(dx<0?1:-1));
+  tTouchX=null;startAuto();
+});
+
+// REVIEW PROOF LIGHTBOX
+const proofModal=document.getElementById('proofModal');
+function closeProof(){proofModal.classList.remove('open');document.body.classList.remove('modal-open');startAuto()}
+document.querySelectorAll('.testimonial-proof').forEach(btn=>btn.addEventListener('click',()=>{
+  document.getElementById('proofLabel').textContent=btn.dataset.proofLabel;
+  document.getElementById('proofImgs').innerHTML=btn.dataset.proof.split(',').map(src=>`<img src="${src}" alt="${btn.dataset.proofLabel}" loading="lazy">`).join('');
+  proofModal.classList.add('open');
+  document.body.classList.add('modal-open');
+  stopAuto();
+}));
+document.getElementById('proofClose').addEventListener('click',closeProof);
+proofModal.addEventListener('click',e=>{if(e.target===proofModal)closeProof()});
 
 // CASE STUDY MODAL
 function openCaseModal(id){
