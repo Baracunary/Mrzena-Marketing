@@ -1,0 +1,6 @@
+# Lokální nástroje – na web se nenasazují
+scripts/
+node_modules/
+package.json
+package-lock.json
+README.md
